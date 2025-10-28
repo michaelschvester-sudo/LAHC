@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="LAHC" />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <meta name="description" content="Thank you for reaching out to Live At Home Care. We have received your request and will get back to you soon.">
+    <meta name="keywords" content="thank you, contact confirmation, Live At Home Care">
+    <meta name="author" content="Live At Home Care">
+    <title>Thank You - Live At Home Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #3a3a2e;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #3a3a2e;
+        }
+        .navbar {
+            transition: background-color 0.3s ease;
+            padding: 0.5rem 0;
+            background-color: #89b0ae;
+            border-bottom: 1px solid #bee3db;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar.scrolled {
+            background-color: #89b0ae;
+            box-shadow: 0 2px 10px rgba(58, 58, 46, 0.1);
+        }
+        .logo-img {
+            filter: grayscale(30%);
+            border: none;
+            transition: filter 0.3s ease, transform 0.3s ease;
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        .nav-link {
+            padding: 0.25rem 0.5rem;
+            color: #faf9f9;
+            font-size: 1.25rem;
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            color: #bee3db;
+        }
+        .nav-item.has-dropdown {
+            position: relative;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #faf9f9;
+            padding: 0;
+            width: 200px;
+            top: 100%;
+            left: 0;
+            margin-top: 0;
+            z-index: 10;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.1s ease;
+            opacity: 0;
+        }
+        .nav-item.has-dropdown:hover .dropdown {
+            display: block;
+            opacity: 1;
+        }
+        .nav-item.has-dropdown.active .dropdown {
+            display: block;
+        }
+        .dropdown a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #3a3a2e;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background-color: #bee3db;
+            color: #3a3a2e;
+        }
+        .thank-you-section {
+            background-color: #ffffff;
+            padding: 4rem 0;
+            border-top: 1px solid #bee3db;
+            margin-top: 100px;
+            text-align: center;
+        }
+        .thank-you-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .thank-you-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #2d2d2d;
+        }
+        .thank-you-section .cta-button {
+            padding: 0.75rem 2rem;
+            background-color: #1a3c34;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .thank-you-section .cta-button:hover {
+            background-color: #2d5d53;
+        }
+        footer {
+            background-color: #1a3c34;
+            color: #bee3db;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer a {
+            color: #bee3db;
+            text-decoration: underline;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #faf9f9;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        .logo-wrapper {
+            height: auto;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .error {
+            color: #3a3a2e;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            .navbar .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0.5rem;
+                height: auto;
+                position: relative;
+            }
+            .logo-wrapper {
+                margin-bottom: 1rem;
+            }
+            .logo-img {
+                height: 120px;
+                max-width: 100%;
+            }
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 100px;
+                left: 0;
+                width: 250px;
+                height: calc(100% - 100px);
+                background-color: #89b0ae;
+                flex-direction: column;
+                padding: 1rem;
+                z-index: 900;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .nav-menu.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-item {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-link {
+                color: #faf9f9;
+                padding: 0.75rem;
+                font-size: 1.2rem;
+                display: block;
+            }
+            .nav-link:hover {
+                color: #bee3db;
+            }
+            .dropdown {
+                display: none;
+                position: static;
+                background-color: #faf9f9;
+                padding-left: 1rem;
+                margin-top: 0;
+                width: 100%;
+            }
+            .nav-item.has-dropdown.active .dropdown {
+                display: block;
+            }
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 800;
+            }
+            .menu-overlay.active {
+                display: block;
+            }
+            .thank-you-section {
+                padding: 2rem 1rem;
+                margin-top: 100px;
+            }
+            .thank-you-section h1 {
+                font-size: 2rem;
+            }
+            .thank-you-section p {
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .nav-menu {
+                flex-direction: row;
+                position: static;
+                padding: 0;
+                background-color: transparent;
+            }
+            .nav-item {
+                margin: 0 0.5rem;
+                position: relative;
+            }
+            .logo-wrapper {
+                height: auto;
+            }
+            .logo-img {
+                height: 160px;
+            }
+            .navbar .container {
+                justify-content: space-between;
+            }
+            .menu-toggle {
+                display: none;
+            }
+            .dropdown {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center logo-wrapper">
+                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link hover:text-[#bee3db]" aria-label="Home">Home</a>
+                </div>
+                <div class="nav-item has-dropdown">
+    <a href="index.html#about" class="nav-link hover:text-[#bee3db]" aria-label="About">About</a>
+    <div class="dropdown">
+        <a href="index.html#about">About Us</a>
+        <a href="our-community.html">Our Community</a>
+    </div>
+</div>
+                <div class="nav-item has-dropdown">
+                    <a href="index.html#services" class="nav-link hover:text-[#bee3db]" aria-label="Services">Services</a>
+                    <div class="dropdown">
+                        <a href="personal-care.html">Personal Care</a>
+                        <a href="companionship.html">Companionship</a>
+                        <a href="it-tech-support.html">IT/Tech Support</a>
+                        <a href="alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
+                        <a href="medication-management.html">Medication Management</a>
+                        <a href="nursing-services.html">Nursing Services</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#faq" class="nav-link hover:text-[#bee3db]" aria-label="FAQ">FAQ</a>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#contact" class="nav-link hover:text-[#bee3db]" aria-label="Contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container mx-auto px-4">
+            <h1>Thank You!</h1>
+            <p>We have received your request and will get back to you soon. Our team is committed to providing you with the best care possible.</p>
+            <a href="index.html" class="cta-button">Return to Home</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+    <div class="container mx-auto px-4">
+        <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
+        <div class="space-x-4 mb-2 flex justify-center">
+            <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+            <span>|</span>
+            <a href="terms-of-use.html" class="hover:text-white">Terms of Service</a>
+        </div>
+        <div class="space-x-4 flex justify-center">
+            <a href="https://www.facebook.com/profile.php?id=61581748379787" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+</footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        if (menuToggle && navMenu && menuOverlay) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+
+            menuOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 767) {
+                        e.preventDefault();
+                        const parent = link.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                menuOverlay.classList.remove('active');
+                            }
+                        }
+                    } else if (href && !href.startsWith('#') && window.innerWidth <= 767) {
+                        window.location.href = href;
+                        setTimeout(() => {
+                            navMenu.classList.remove('active');
+                            menuOverlay.classList.remove('active');
+                        }, 100);
+                    }
+                });
+            });
+        }
+
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            item.addEventListener('mouseenter', () => {
+                dropdown.style.display = 'block';
+            });
+            item.addEventListener('mouseleave', () => {
+                dropdown.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
