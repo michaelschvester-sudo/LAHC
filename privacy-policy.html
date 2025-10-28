@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="LAHC" />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <meta name="description" content="Learn about Live At Home Care's privacy policy regarding the collection, use, and protection of your personal information.">
+    <meta name="keywords" content="privacy policy, data protection, Live At Home Care, senior care privacy">
+    <meta name="author" content="Live At Home Care">
+    <title>Privacy Policy - Live At Home Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #3a3a2e;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #3a3a2e;
+        }
+        .navbar {
+            transition: background-color 0.3s ease;
+            padding: 0.5rem 0;
+            background-color: #89b0ae;
+            border-bottom: 1px solid #bee3db;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar.scrolled {
+            background-color: #89b0ae;
+            box-shadow: 0 2px 10px rgba(58, 58, 46, 0.1);
+        }
+        .logo-img {
+            filter: grayscale(30%);
+            border: none;
+            transition: filter 0.3s ease, transform 0.3s ease;
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        .nav-link {
+            padding: 0.25rem 0.5rem;
+            color: #faf9f9;
+            font-size: 1.25rem;
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            color: #bee3db;
+        }
+        .nav-item.has-dropdown {
+            position: relative;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #faf9f9;
+            padding: 0;
+            width: 200px;
+            top: 100%;
+            left: 0;
+            margin-top: 0;
+            z-index: 10;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.1s ease;
+            opacity: 0;
+        }
+        .nav-item.has-dropdown:hover .dropdown {
+            display: block;
+            opacity: 1;
+        }
+        .nav-item.has-dropdown.active .dropdown {
+            display: block;
+        }
+        .dropdown a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #3a3a2e;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background-color: #bee3db;
+            color: #3a3a2e;
+        }
+        .content-section {
+            padding: 4rem 0;
+            margin-top: 100px;
+            background-color: #faf9f9;
+            border-top: 1px solid #bee3db;
+        }
+        .content-section h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .content-section p, .content-section ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .content-section ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        footer {
+            background-color: #89b0ae;
+            color: #faf9f9;
+            padding: 2rem 0;
+            border-top: 1px solid #bee3db;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        footer a {
+            color: #bee3db;
+        }
+        footer a:hover {
+            color: #faf9f9;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #faf9f9;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        .logo-wrapper {
+            height: auto;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            .navbar .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0.5rem;
+                height: auto;
+                position: relative;
+            }
+            .logo-wrapper {
+                margin-bottom: 1rem;
+            }
+            .logo-img {
+                height: 120px;
+                max-width: 100%;
+            }
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 100px;
+                left: 0;
+                width: 250px;
+                height: calc(100% - 100px);
+                background-color: #89b0ae;
+                flex-direction: column;
+                padding: 1rem;
+                z-index: 900;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .nav-menu.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-item {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-link {
+                color: #faf9f9;
+                padding: 0.75rem;
+                font-size: 1.2rem;
+                display: block;
+            }
+            .nav-link:hover {
+                color: #bee3db;
+            }
+            .dropdown {
+                display: none;
+                position: static;
+                background-color: #faf9f9;
+                padding-left: 1rem;
+                margin-top: 0;
+                width: 100%;
+            }
+            .nav-item.has-dropdown.active .dropdown {
+                display: block;
+            }
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 800;
+            }
+            .menu-overlay.active {
+                display: block;
+            }
+        }
+        @media (min-width: 768px) {
+            .nav-menu {
+                flex-direction: row;
+                position: static;
+                padding: 0;
+                background-color: transparent;
+            }
+            .nav-item {
+                margin: 0 0.5rem;
+                position: relative;
+            }
+            .logo-wrapper {
+                height: auto;
+            }
+            .logo-img {
+                height: 160px;
+            }
+            .navbar .container {
+                justify-content: space-between;
+            }
+            .dropdown {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center logo-wrapper">
+                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="index.html#home" class="nav-link hover:text-[#bee3db]" aria-label="Home">Home</a>
+                </div>
+               <div class="nav-item has-dropdown">
+    <a href="index.html#about" class="nav-link hover:text-[#bee3db]" aria-label="About">About</a>
+    <div class="dropdown">
+        <a href="index.html#about">About Us</a>
+        <a href="our-community.html">Our Community</a>
+    </div>
+</div>
+                <div class="nav-item has-dropdown">
+                    <a href="index.html#services" class="nav-link hover:text-[#bee3db]" aria-label="Services">Services</a>
+                    <div class="dropdown">
+                        <a href="personal-care.html">Personal Care</a>
+                        <a href="companionship.html">Companionship</a>
+                        <a href="it-tech-support.html">IT/Tech Support</a>
+                        <a href="alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
+                        <a href="medication-management.html">Medication Management</a>
+                        <a href="nursing-services.html">Nursing Services</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#faq" class="nav-link hover:text-[#bee3db]" aria-label="FAQ">FAQ</a>
+                </div>
+                <div class="nav-item">
+                    <a href="index.html#contact" class="nav-link hover:text-[#bee3db]" aria-label="Contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <section class="content-section">
+        <div class="container mx-auto px-4">
+            <h1>Privacy Policy</h1>
+            <p>Last Updated: October 03, 2025</p>
+            <p>At Live At Home Care, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our services or visit our website.</p>
+            
+            <h2>1. Information We Collect</h2>
+            <p>We may collect the following types of information:</p>
+            <ul>
+                <li>Personal details (e.g., name, address, phone number, email)</li>
+                <li>Health information (e.g., medical history, care needs) provided during consultations</li>
+                <li>Usage data (e.g., website interactions, service inquiries)</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide and personalize our care services</li>
+                <li>Communicate with you about your care plan or inquiries</li>
+                <li>Improve our website and services</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+
+            <h2>3. How We Share Your Information</h2>
+            <p>We do not sell your personal information. We may share it with:</p>
+            <ul>
+                <li>Authorized caregivers or healthcare professionals involved in your care</li>
+                <li>Service providers (e.g., payment processors, IT support) under confidentiality agreements</li>
+                <li>Legal authorities if required by law</li>
+            </ul>
+
+            <h2>4. Data Security</h2>
+            <p>We implement reasonable security measures to protect your information from unauthorized access, use, or disclosure. However, no online transmission is completely secure.</p>
+
+            <h2>5. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+        <li>Access, correct, or delete your personal information</li>
+        <li>Opt-out of marketing communications</li>
+        <li>File a complaint with a data protection authority</li>
+    </ul>
+    <p>To exercise these rights, please contact us at contact@lahc.ca.</p>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated policy on this page with a revised "Last Updated" date.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, please reach out to us at:</p>
+            <p><strong>Email:</strong> contact@lahc.ca</p>
+            <p><strong>Address:</strong> 202-998 Harbourside Drive, North Vancouver, BC</p>
+        </div>
+    </section>
+    <footer>
+        <div class="container mx-auto px-4">
+            <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
+            <div class="space-x-4 mb-2 flex justify-center">
+                <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <span>|</span>
+                <a href="terms-of-use.html" class="hover:text-white">Terms of Service</a>
+            </div>
+            <div class="space-x-4 flex justify-center">
+                <a href="https://www.facebook.com/profile.php?id=61581748379787" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        if (menuToggle && navMenu && menuOverlay) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+
+            menuOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+
+            document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 767) {
+                        e.preventDefault();
+                        const parent = link.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                menuOverlay.classList.remove('active');
+                            }
+                        }
+                    } else if (href && !href.startsWith('#') && window.innerWidth <= 767) {
+                        window.location.href = href;
+                        setTimeout(() => {
+                            navMenu.classList.remove('active');
+                            menuOverlay.classList.remove('active');
+                        }, 100);
+                    }
+                });
+            });
+        }
+
+        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            item.addEventListener('mouseenter', () => {
+                dropdown.style.display = 'block';
+            });
+            item.addEventListener('mouseleave', () => {
+                dropdown.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
