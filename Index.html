@@ -337,18 +337,18 @@
             .service-areas .bg-shape {
                 display: none;
             }
-            /* Hide image and adjust spacing for button above text */
+            /* Hide image on mobile, keep button */
             .about-image img {
                 display: none;
             }
             .about-image {
-                margin-bottom: 0.5rem; /* Small gap after button */
+                margin-bottom: 0.5rem;
             }
             .about-image a {
-                margin: 0 0 0.5rem 0; /* No top margin, small bottom margin before text */
+                margin: 0 0 0.5rem 0;
             }
             .about-section h2 {
-                margin-top: 0; /* No top margin to keep tight with button */
+                margin-top: 0;
             }
         }
         @media (min-width: 768px) {
@@ -696,30 +696,37 @@
         </div>
     </section>
     <!-- About Section -->
-    <section id="about" class="about-section py-16">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="about-image w-full md:w-1/2 mb-8 md:mb-0">
-                    <img src="images/about-us-photo.jpg" alt="About Us - Live At Home Care Team" class="w-full h-full object-cover rounded-lg border border-[#bee3db]">
-                    <a href="blog.html" class="block mt-2 text-center bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Resources</a>
+    <section id="about" class="about-section py-16 bg-gradient-to-br from-[#faf9f9] to-[#e9f5f2] border-t border-b border-[#bee3db] overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <!-- Image and Button Container -->
+                <div class="w-full md:w-1/2 flex-shrink-0">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="images/about-us-photo.jpg" alt="About Us - Live At Home Care Team" class="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <a href="blog.html" class="absolute bottom-4 left-4 bg-[#89b0ae] text-[#faf9f9] px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#bee3db] hover:text-[#3a3a2e] transition-colors duration-200">Explore Resources</a>
+                    </div>
                 </div>
-                <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
-                    <h2 class="text-4rem font-bold mb-6">About Live At Home Care</h2>
-                    <p class="text-lg mb-6">
-                        Live At Home Care is a proud division of Simpe Q, a leading provider of senior care services in British Columbia since 2003, now boasting over 20 years of experience serving seniors across Vancouver, Vancouver Island, North Vancouver, and the Lower Mainland. Our dedicated team employs full-time certified Home Care Assistants, Licensed Practical Nurses, and caregivers, all trained and mentored with an exclusive approach to senior caregiving.
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3a3a2e] mb-4 tracking-tight">About Live At Home Care</h2>
+                    <p class="text-base md:text-lg text-[#3a3a2e] mb-6 leading-relaxed">
+                        With over 20 years of excellence since 2003, Live At Home Care, a division of Simpe Q, proudly serves seniors across Vancouver, North Vancouver, and the Lower Mainland. Our dedicated team of certified Home Care Assistants, Licensed Practical Nurses, and caregivers delivers personalized care with an innovative approach, blending compassion with expertise.
                     </p>
-                    <div class="flex flex-col md:flex-row justify-center md:justify-start gap-6">
-                        <div class="max-w-xs">
-                            <h3 class="text-xl font-semibold mb-2">Our Values</h3>
-                            <p>We pledge to give our best in every service we provide. We guarantee seniors the respect and dignity they deserve, honoring the unique history and character shaped by their life.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-lg md:text-xl font-semibold text-[#89b0ae] mb-2">Our Values</h3>
+                            <p class="text-sm md:text-base text-[#3a3a2e]">We honor every senior’s dignity and unique life story, delivering care with unwavering respect and commitment.</p>
                         </div>
-                        <div class="max-w-xs">
-                            <h3 class="text-xl font-semibold mb-2">Our Team</h3>
-                            <p>Experienced Home Care Assistants (HCA), Licensed Practical Nurses (LPN), caregivers, and IT specialists for personalized support.</p>
+                        <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <h3 class="text-lg md:text-xl font-semibold text-[#89b0ae] mb-2">Our Team</h3>
+                            <p class="text-sm md:text-base text-[#3a3a2e]">Experienced HCAs, LPNs, caregivers, and IT specialists, all trained to provide tailored, high-quality support.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Subtle Background Accent -->
+            <div class="absolute -top-20 -left-20 w-48 h-48 bg-[#89b0ae]/10 rounded-full blur-xl opacity-50 animate-pulse-slow z-0"></div>
+            <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-[#bee3db]/10 rounded-full blur-xl opacity-50 animate-pulse-slow z-0"></div>
         </div>
     </section>
     <!-- Services Section -->
