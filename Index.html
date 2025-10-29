@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="Images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="Images/favicon.svg" />
-    <link rel="shortcut icon" href="Images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="LAHC" />
-    <link rel="manifest" href="Images/site.webmanifest" />
+    <link rel="manifest" href="images/site.webmanifest" />
     <meta name="description" content="Live At Home Care offers personalized at-home care, nursing, and IT/tech support for seniors in North Vancouver and the Lower Mainland. Book a free consultation today.">
     <meta name="keywords" content="North Vancouver home care, senior care Vancouver, nursing services, IT support for seniors, Alzheimer’s care Vancouver, tech support Vancouver">
     <meta name="author" content="Live At Home Care">
@@ -135,18 +135,118 @@
         .hero-section button:hover {
             background-color: #bee3db;
         }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #faf9f9;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: absolute;
+            top: 2rem;
+            right: 1rem;
+            z-index: 1001;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        .logo-wrapper {
+            height: auto;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .error {
+            color: #3a3a2e;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .service-areas {
+            background: linear-gradient(135deg, #e9f5f2 0%, #faf9f9 100%);
+            padding: 4rem 0;
+            border-top: 1px solid #bee3db;
+            border-bottom: 1px solid #bee3db;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-areas h2 {
+            text-align: center;
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #3a3a2e;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .service-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .service-area-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.75rem;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(58, 58, 46, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #89b0ae, #bee3db);
+            z-index: 1;
+        }
+        .service-area-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(58, 58, 46, 0.15);
+        }
+        .service-area-card i {
+            font-size: 1.75rem;
+            color: #89b0ae;
+            margin-bottom: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+        .service-area-card:hover i {
+            transform: scale(1.1);
+        }
+        .service-area-card h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: #3a3a2e;
+            margin: 0;
+            z-index: 2;
+            position: relative;
+        }
+        .service-areas .bg-shape {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(137, 176, 174, 0.15) 0%, rgba(58, 58, 46, 0.05) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+        .bg-shape-1 { top: -150px; left: -150px; }
+        .bg-shape-2 { bottom: -150px; right: -150px; }
         @media (max-width: 767px) {
-            .hero-section {
-                height: auto;
-                min-height: 60vh;
-                background-attachment: scroll;
-                background-size: cover;
-                background-position: center;
-                padding-top: 100px;
-            }
-            .hero-section .container {
-                padding-bottom: 6rem;
-            }
             .menu-toggle {
                 display: block;
             }
@@ -219,6 +319,17 @@
             }
             .menu-overlay.active {
                 display: block;
+            }
+            .hero-section {
+                height: auto;
+                min-height: 60vh;
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
+                padding-top: 100px;
+            }
+            .hero-section .container {
+                padding-bottom: 6rem;
             }
             .service-areas-grid {
                 grid-template-columns: 1fr 1fr;
@@ -516,117 +627,6 @@
         footer a:hover {
             color: #faf9f9;
         }
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: #faf9f9;
-            cursor: pointer;
-            padding: 0.5rem;
-            position: absolute;
-            top: 2rem;
-            right: 1rem;
-            z-index: 1001;
-        }
-        .nav-menu {
-            display: flex;
-            align-items: center;
-        }
-        .logo-wrapper {
-            height: auto;
-            overflow: visible;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .error {
-            color: #3a3a2e;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-        .service-areas {
-            background: linear-gradient(135deg, #e9f5f2 0%, #faf9f9 100%);
-            padding: 4rem 0;
-            border-top: 1px solid #bee3db;
-            border-bottom: 1px solid #bee3db;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-areas h2 {
-            text-align: center;
-            font-size: 2.75rem;
-            font-weight: 700;
-            color: #3a3a2e;
-            margin-bottom: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        .service-areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .service-area-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 1.75rem;
-            text-align: center;
-            box-shadow: 0 6px 18px rgba(58, 58, 46, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-area-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #89b0ae, #bee3db);
-            z-index: 1;
-        }
-        .service-area-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(58, 58, 46, 0.15);
-        }
-        .service-area-card i {
-            font-size: 1.75rem;
-            color: #89b0ae;
-            margin-bottom: 0.75rem;
-            transition: transform 0.3s ease;
-        }
-        .service-area-card:hover i {
-            transform: scale(1.1);
-        }
-        .service-area-card h3 {
-            font-size: 1.375rem;
-            font-weight: 600;
-            color: #3a3a2e;
-            margin: 0;
-            z-index: 2;
-            position: relative;
-        }
-        .service-areas .bg-shape {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(137, 176, 174, 0.15) 0%, rgba(58, 58, 46, 0.05) 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: 0;
-        }
-        .bg-shape-1 { top: -150px; left: -150px; }
-        .bg-shape-2 { bottom: -150px; right: -150px; }
     </style>
 </head>
 <body>
@@ -972,18 +972,22 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const menuOverlay = document.getElementById('menuOverlay');
+
         if (menuToggle && navMenu && menuOverlay) {
             menuToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
             });
+
             menuOverlay.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
             });
+
             document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 767) {
@@ -993,6 +997,7 @@
                     }
                 });
             });
+
             document.querySelectorAll('.nav-link, .bg-\\[#89b0ae\\]').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
@@ -1020,15 +1025,7 @@
                 });
             });
         }
-        document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
-            const dropdown = item.querySelector('.dropdown');
-            item.addEventListener('mouseenter', () => {
-                dropdown.style.display = 'block';
-            });
-            item.addEventListener('mouseleave', () => {
-                dropdown.style.display = 'none';
-            });
-        });
+
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
@@ -1064,6 +1061,7 @@
                 }
             });
         }
+
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             answer.classList.toggle('active');
@@ -1071,4 +1069,3 @@
     </script>
 </body>
 </html>
-
