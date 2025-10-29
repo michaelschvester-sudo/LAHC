@@ -337,37 +337,15 @@
             .service-areas .bg-shape {
                 display: none;
             }
-            /* Adjust layout to bring Resources button closer to About headline */
-            .about-section {
-                padding-top: 2rem;
-            }
-            .about-section > .container > .flex {
-                margin: 0;
-            }
+            /* Reduce gap between Resources button and headline */
             .about-image {
-                margin-bottom: 0;
+                margin-bottom: 0.5rem; /* Reduce from 2rem (mb-8) to 0.5rem */
             }
             .about-image a {
-                display: block;
-                margin: 0.5rem 0 0 0; /* Top margin only, no bottom margin */
-                width: 100%;
-                text-align: center;
+                margin-bottom: 0.25rem; /* Add small margin below button to separate it from headline */
             }
             .about-section h2 {
-                margin: 0 0 1rem 0; /* No top margin, only bottom margin */
-            }
-            /* Move button outside image div and adjust order */
-            .about-section .flex > *:first-child {
-                order: 2; /* Move image to second position */
-            }
-            .about-section .flex > *:nth-child(2) {
-                order: 1; /* Move text/content (with headline) to first position */
-            }
-            .about-section .flex > .about-image {
-                margin-top: 1rem; /* Add small gap after headline and button */
-            }
-            .about-section .flex > .about-image a {
-                margin-top: 0; /* Remove top margin on button when repositioned */
+                margin-top: 0.5rem; /* Reduce top margin to minimize gap */
             }
         }
         @media (min-width: 768px) {
@@ -719,6 +697,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="about-image w-full md:w-1/2 mb-8 md:mb-0">
+                    <a href="blog.html" class="block mt-4 text-center bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Resources</a>
                     <img src="images/about-us-photo.jpg" alt="About Us - Live At Home Care Team" class="w-full h-full object-cover rounded-lg border border-[#bee3db]">
                 </div>
                 <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
@@ -736,7 +715,6 @@
                             <p>Experienced Home Care Assistants (HCA), Licensed Practical Nurses (LPN), caregivers, and IT specialists for personalized support.</p>
                         </div>
                     </div>
-                    <a href="blog.html" class="block mt-4 text-center bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Resources</a>
                 </div>
             </div>
         </div>
