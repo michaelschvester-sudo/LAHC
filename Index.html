@@ -337,15 +337,15 @@
             .service-areas .bg-shape {
                 display: none;
             }
-            /* Reduce gap between Resources button and headline */
+            /* Adjust spacing for button below image and above headline */
             .about-image {
-                margin-bottom: 0.5rem; /* Reduce from 2rem (mb-8) to 0.5rem */
+                margin-bottom: 0.5rem; /* Minimal gap after image and button stack */
             }
             .about-image a {
-                margin-bottom: 0.25rem; /* Add small margin below button to separate it from headline */
+                margin: 0.5rem 0 0 0; /* Small top margin below image, no bottom margin to keep close to headline */
             }
             .about-section h2 {
-                margin-top: 0.5rem; /* Reduce top margin to minimize gap */
+                margin-top: 0; /* No top margin to eliminate gap with button */
             }
         }
         @media (min-width: 768px) {
@@ -697,8 +697,8 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="about-image w-full md:w-1/2 mb-8 md:mb-0">
-                    <a href="blog.html" class="block mt-4 text-center bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Resources</a>
                     <img src="images/about-us-photo.jpg" alt="About Us - Live At Home Care Team" class="w-full h-full object-cover rounded-lg border border-[#bee3db]">
+                    <a href="blog.html" class="block mt-2 text-center bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Resources</a>
                 </div>
                 <div class="w-full md:w-1/2 md:pl-8 text-center md:text-left">
                     <h2 class="text-4rem font-bold mb-6">About Live At Home Care</h2>
