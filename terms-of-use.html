@@ -147,7 +147,6 @@
             cursor: pointer;
             padding: 0.5rem;
             position: absolute;
-            top: 2rem;
             right: 1rem;
             z-index: 1001;
         }
@@ -166,6 +165,7 @@
         @media (max-width: 767px) {
             .menu-toggle {
                 display: block;
+                top: 50px; /* Adjusted to align with the logo's vertical center */
             }
             .navbar .container {
                 flex-direction: column;
@@ -310,13 +310,11 @@
             <h1>Terms of Use</h1>
             <p>Last Updated: October 03, 2025</p>
             <p>Welcome to Live At Home Care. By accessing or using our website and services, you agree to be bound by these Terms of Use. Please read them carefully.</p>
-            
+           
             <h2>1. Acceptance of Terms</h2>
             <p>By using our services, you agree to comply with these Terms of Use and any additional guidelines or rules posted on our website.</p>
-
             <h2>2. Services Provided</h2>
             <p>We offer home care services including personal care, nursing, and IT support for seniors. All services are subject to availability and a consultation process.</p>
-
             <h2>3. User Responsibilities</h2>
             <p>You agree to:</p>
             <ul>
@@ -324,22 +322,16 @@
                 <li>Use our services for lawful purposes only</li>
                 <li>Notify us of any changes in your care needs</li>
             </ul>
-
             <h2>4. Payment and Cancellation</h2>
     <p>Services are billed as agreed during the care plan setup. Cancellations must be made 24 hours in advance, or a fee may apply. Payment terms will be outlined in your care agreement.</p>
-
             <h2>5. Intellectual Property</h2>
             <p>All content on this website, including text, logos, and images, is the property of Live At Home Care and protected by copyright laws.</p>
-
             <h2>6. Limitation of Liability</h2>
     <p>Live At Home Care is not liable for any indirect, incidental, or consequential damages arising from the use of our services, to the extent permitted by law.</p>
-
             <h2>7. Termination</h2>
             <p>We reserve the right to terminate or suspend your access to our services if you violate these Terms of Use.</p>
-
             <h2>8. Changes to Terms</h2>
             <p>We may update these Terms of Use at any time. Continued use of our services after changes constitutes acceptance of the new terms.</p>
-
             <h2>9. Contact Us</h2>
             <p>For questions about these Terms of Use, please contact us at:</p>
             <p><strong>Email:</strong> contact@lahc.ca</p>
@@ -368,7 +360,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -377,12 +368,10 @@
                 navMenu.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
             });
-
             menuOverlay.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
             });
-
             document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 767) {
@@ -392,7 +381,6 @@
                     }
                 });
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
@@ -416,7 +404,6 @@
                 });
             });
         }
-
         document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
             const dropdown = item.querySelector('.dropdown');
             item.addEventListener('mouseenter', () => {
@@ -428,5 +415,4 @@
         });
     </script>
 </body>
-
 </html>
