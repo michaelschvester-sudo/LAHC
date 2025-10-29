@@ -337,15 +337,18 @@
             .service-areas .bg-shape {
                 display: none;
             }
-            /* Adjust spacing for button below image and above headline */
+            /* Hide image and adjust spacing for button above text */
+            .about-image img {
+                display: none;
+            }
             .about-image {
-                margin-bottom: 0.5rem; /* Minimal gap after image and button stack */
+                margin-bottom: 0.5rem; /* Small gap after button */
             }
             .about-image a {
-                margin: 0.5rem 0 0 0; /* Small top margin below image, no bottom margin to keep close to headline */
+                margin: 0 0 0.5rem 0; /* No top margin, small bottom margin before text */
             }
             .about-section h2 {
-                margin-top: 0; /* No top margin to eliminate gap with button */
+                margin-top: 0; /* No top margin to keep tight with button */
             }
         }
         @media (min-width: 768px) {
@@ -1072,4 +1075,3 @@
     </script>
 </body>
 </html>
-
