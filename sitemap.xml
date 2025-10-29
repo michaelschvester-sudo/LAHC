@@ -2,83 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Main Pages -->
     <url>
-        <loc>https://lahc.ca/</loc>
-        <lastmod>2025-10-03</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://liveathomecare.ca/</loc>
+        <lastmod>2025-10-29</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/privacy-policy.html</loc>
-        <lastmod>2025-10-03</lastmod>
+        <loc>https://liveathomecare.ca/our-community.html</loc>
+        <lastmod>2025-10-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/terms-of-use.html</loc>
-        <lastmod>2025-10-03</lastmod>
+        <loc>https://liveathomecare.ca/careers.html</loc>
+        <lastmod>2025-10-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    <url>
+        <loc>https://liveathomecare.ca/privacy-policy.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://liveathomecare.ca/terms-of-use.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
     <!-- Blog and Related Pages -->
     <url>
-        <loc>https://lahc.ca/blog.html</loc>
+        <loc>https://liveathomecare.ca/blog.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/blog-post-1.html</loc>
+        <loc>https://liveathomecare.ca/tips-managing-alzheimers-home.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/blog-post-2.html</loc>
+        <loc>https://liveathomecare.ca/it-support-seniors.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/blog-post-3.html</loc>
+        <loc>https://liveathomecare.ca/fall-prevention-elderly.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.6</priority>
     </url>
-
     <!-- Service Pages -->
     <url>
-        <loc>https://lahc.ca/personal-care.html</loc>
+        <loc>https://liveathomecare.ca/personal-care.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/companionship.html</loc>
+        <loc>https://liveathomecare.ca/companionship.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/it-tech-support.html</loc>
+        <loc>https://liveathomecare.ca/it-tech-support.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/alzheimers-dementia-care.html</loc>
+        <loc>https://liveathomecare.ca/alzheimers-dementia-care.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/medication-management.html</loc>
+        <loc>https://liveathomecare.ca/medication-management.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://lahc.ca/nursing-services.html</loc>
+        <loc>https://liveathomecare.ca/nursing-services.html</loc>
         <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
