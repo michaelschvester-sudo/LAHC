@@ -217,12 +217,21 @@
             }
             /* Mobile-specific hero section adjustments */
             .hero-section {
-                height: 60vh; /* Reduced height for mobile */
-                background-size: cover; /* Maintain cover but adjust positioning */
-                background-position: center; /* Center the image to focus on key content */
+                height: 60vh;
+                background-size: cover;
+                background-position: center;
             }
             .hero-section .container {
-                padding-bottom: 6rem; /* Adjust padding to fit content */
+                padding-bottom: 6rem;
+            }
+            /* Adjust text size for mobile */
+            .hero-section h1 {
+                font-size: 1.5rem; /* text-2xl equivalent */
+                line-height: 1.75rem;
+            }
+            .hero-section p {
+                font-size: 0.875rem; /* text-sm equivalent */
+                line-height: 1.25rem;
             }
         }
         @media (min-width: 768px) {
@@ -256,6 +265,15 @@
             }
             .service-areas .bg-shape {
                 display: block;
+            }
+            /* Ensure desktop text sizes remain */
+            .hero-section h1 {
+                font-size: 2.25rem; /* text-4xl equivalent */
+                line-height: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1.125rem; /* text-lg equivalent */
+                line-height: 1.75rem;
             }
         }
         .about-section {
