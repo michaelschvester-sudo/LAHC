@@ -217,7 +217,6 @@
             cursor: pointer;
             padding: 0.5rem;
             position: absolute;
-            top: 2rem;
             right: 1rem;
             z-index: 1001;
         }
@@ -236,6 +235,7 @@
         @media (max-width: 767px) {
             .menu-toggle {
                 display: block;
+                top: 50px; /* Adjusted to align with the logo's vertical center */
             }
             .navbar .container {
                 flex-direction: column;
@@ -490,7 +490,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -499,12 +498,10 @@
                 navMenu.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
             });
-
             menuOverlay.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
             });
-
             document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 767) {
@@ -514,7 +511,6 @@
                     }
                 });
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
@@ -542,7 +538,6 @@
                 });
             });
         }
-
         document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
             const dropdown = item.querySelector('.dropdown');
             item.addEventListener('mouseenter', () => {
@@ -552,7 +547,6 @@
                 dropdown.style.display = 'none';
             });
         });
-
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
@@ -590,5 +584,4 @@
         }
     </script>
 </body>
-
 </html>
