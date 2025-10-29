@@ -156,7 +156,6 @@
             cursor: pointer;
             padding: 0.5rem;
             position: absolute;
-            top: 2rem;
             right: 1rem;
             z-index: 1001;
         }
@@ -181,6 +180,7 @@
         @media (max-width: 767px) {
             .menu-toggle {
                 display: block;
+                top: 50px; /* Adjusted to align with the logo's vertical center */
             }
             .navbar .container {
                 flex-direction: column;
@@ -307,12 +307,12 @@
                     <a href="index.html" class="nav-link hover:text-[#bee3db]" aria-label="Home">Home</a>
                 </div>
                 <div class="nav-item has-dropdown">
-    <a href="index.html#about" class="nav-link hover:text-[#bee3db]" aria-label="About">About</a>
-    <div class="dropdown">
-        <a href="index.html#about">About Us</a>
-        <a href="our-community.html">Our Community</a>
-    </div>
-</div>
+                    <a href="index.html#about" class="nav-link hover:text-[#bee3db]" aria-label="About">About</a>
+                    <div class="dropdown">
+                        <a href="index.html#about">About Us</a>
+                        <a href="our-community.html">Our Community</a>
+                    </div>
+                </div>
                 <div class="nav-item has-dropdown">
                     <a href="index.html#services" class="nav-link hover:text-[#bee3db]" aria-label="Services">Services</a>
                     <div class="dropdown">
@@ -344,18 +344,18 @@
     </section>
     <!-- Footer -->
     <footer>
-    <div class="container mx-auto px-4">
-        <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
-        <div class="space-x-4 mb-2 flex justify-center">
-            <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
-            <span>|</span>
-            <a href="terms-of-use.html" class="hover:text-white">Terms of Service</a>
+        <div class="container mx-auto px-4">
+            <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
+            <div class="space-x-4 mb-2 flex justify-center">
+                <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <span>|</span>
+                <a href="terms-of-use.html" class="hover:text-white">Terms of Service</a>
+            </div>
+            <div class="space-x-4 flex justify-center">
+                <a href="https://www.facebook.com/profile.php?id=61581748379787" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
-        <div class="space-x-4 flex justify-center">
-            <a href="https://www.facebook.com/profile.php?id=61581748379787" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        </div>
-    </div>
-</footer>
+    </footer>
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -365,7 +365,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -374,12 +373,10 @@
                 navMenu.classList.toggle('active');
                 menuOverlay.classList.toggle('active');
             });
-
             menuOverlay.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuOverlay.classList.remove('active');
             });
-
             document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 767) {
@@ -389,7 +386,6 @@
                     }
                 });
             });
-
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     const href = link.getAttribute('href');
@@ -413,7 +409,6 @@
                 });
             });
         }
-
         document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
             const dropdown = item.querySelector('.dropdown');
             item.addEventListener('mouseenter', () => {
@@ -425,5 +420,4 @@
         });
     </script>
 </body>
-
 </html>
