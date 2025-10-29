@@ -30,7 +30,7 @@
       "description": "Practical strategies for creating a safe and supportive environment for loved ones with Alzheimer’s in North Vancouver."
     }
     </script>
-    <script async src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Removed async -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
     <style>
@@ -450,7 +450,7 @@
             <time datetime="2025-10-01" class="content-date">Posted on October 1, 2025</time>
             <img src="images/alzheimers-care-vancouver.jpg" alt="Caregiver helping senior with Alzheimer’s in North Vancouver home" class="content-img" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'; console.error('Image failed to load at images/alzheimers-care-vancouver.jpg');">
             <p class="content-text">Caring for a loved one with Alzheimer’s disease at home in North Vancouver can be both rewarding and challenging. With the right strategies, you can create a safe, supportive environment that enhances their quality of life. At <a href="alzheimers-dementia-care.html" class="content-link">Live At Home Care</a>, we specialize in personalized Alzheimer’s and dementia care to help families in Greater Vancouver navigate this journey. Here are practical tips to manage Alzheimer’s at home effectively.</p>
-           
+          
             <h2 class="content-heading">1. Create a Safe Home Environment</h2>
             <p class="content-text">Safety is a top priority for seniors with Alzheimer’s. Simple modifications to your North Vancouver home can prevent accidents and reduce stress:</p>
             <ul class="content-list">
@@ -459,7 +459,7 @@
                 <li><strong>Lock away hazards:</strong> Store medications, cleaning supplies, and sharp objects in locked cabinets.</li>
             </ul>
             <p class="content-text">These changes create a secure space, allowing your loved one to move confidently.</p>
-           
+          
             <h2 class="content-heading">2. Establish a Consistent Routine</h2>
             <p class="content-text">Alzheimer’s can make daily life unpredictable, but a consistent routine provides stability. Try these approaches:</p>
             <ul class="content-list">
@@ -468,7 +468,7 @@
                 <li><strong>Incorporate familiar activities:</strong> Engage in hobbies like gardening or listening to music, which can spark positive memories.</li>
             </ul>
             <p class="content-text">Our <a href="companionship.html" class="content-link">companionship services</a> can help maintain routines with engaging activities tailored to your loved one’s interests.</p>
-           
+          
             <h2 class="content-heading">3. Enhance Communication</h2>
             <p class="content-text">Effective communication reduces frustration for both you and your loved one. Here’s how:</p>
             <ul class="content-list">
@@ -477,7 +477,7 @@
                 <li><strong>Be patient:</strong> Allow extra time for responses, and avoid correcting mistakes unnecessarily.</li>
             </ul>
             <p class="content-text">Our caregivers are trained in compassionate communication techniques to support seniors with Alzheimer’s.</p>
-           
+          
             <h2 class="content-heading">4. Use Technology to Stay Connected</h2>
             <p class="content-text">Technology can help seniors with Alzheimer’s stay engaged and safe. In North Vancouver, where community connection is key, consider:</p>
             <ul class="content-list">
@@ -486,7 +486,7 @@
                 <li><strong>Medication reminders:</strong> Use apps or devices to ensure timely medication, supported by our <a href="medication-management.html" class="content-link">medication management services</a>.</li>
             </ul>
             <p class="content-text">Technology can bridge gaps, keeping your loved one connected to family and caregivers.</p>
-           
+          
             <h2 class="content-heading">5. Support Caregiver Well-Being</h2>
             <p class="content-text">Caring for someone with Alzheimer’s can be emotionally and physically demanding. To avoid burnout:</p>
             <ul class="content-list">
@@ -495,7 +495,7 @@
                 <li><strong>Seek professional help:</strong> Our <a href="nursing-services.html" class="content-link">nursing services</a> provide expert care from LPNs for medical needs.</li>
             </ul>
             <p class="content-text">Your well-being is crucial to providing the best care for your loved one.</p>
-           
+          
             <h2 class="content-heading">Why Choose Live At Home Care?</h2>
             <p class="content-text">At Live At Home Care, we understand the unique challenges of Alzheimer’s care in North Vancouver. Our personalized services, from companionship to specialized dementia care, help families create a supportive home environment. Whether you need help with safety modifications, daily routines, or technology setup, our team is here to assist.</p>
             <p class="content-text">Ready to make your home Alzheimer’s-friendly? <a href="index.html#contact" class="content-link">Contact us today</a> to learn how we can support your family in Greater Vancouver.</p>
@@ -521,6 +521,13 @@
         </div>
     </footer>
     <script>
+        // Force layout recalculation on load
+        window.addEventListener('load', () => {
+            document.body.style.display = 'block'; // Ensure body is visible
+            window.scrollTo(0, 0); // Reset scroll position
+            document.querySelector('.content-container').style.opacity = '1'; // Ensure content is visible
+        });
+
         // Navbar JavaScript (unchanged)
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM loaded for tips-managing-alzheimers-home.html');
