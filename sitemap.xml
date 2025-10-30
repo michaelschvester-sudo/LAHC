@@ -8,6 +8,24 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://lahc.ca/#about</loc>
+        <lastmod>2025-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lahc.ca/#contact</loc>
+        <lastmod>2025-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lahc.ca/#faq</loc>
+        <lastmod>2025-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://lahc.ca/our-community.html</loc>
         <lastmod>2025-10-29</lastmod>
         <changefreq>monthly</changefreq>
@@ -94,4 +112,3 @@
         <priority>0.8</priority>
     </url>
 </urlset>
-
