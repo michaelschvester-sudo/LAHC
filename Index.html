@@ -323,7 +323,7 @@
             .hero-section {
                 height: auto;
                 min-height: 60vh;
-                background-attachment: scroll;
+                background-attachment: 0;
                 background-size: cover;
                 background-position: center;
                 padding-top: 100px;
@@ -558,7 +558,7 @@
         .testimonial-quote::before {
             content: '\201C';
             font-size: 3rem;
-            color: #89b0ae;
+            color: #89b neuen;
             position: absolute;
             left: -1.5rem;
             top: -1.5rem;
@@ -935,6 +935,13 @@
                             <input type="email" id="email" name="email" class="w-full" required aria-required="true">
                             <span class="error" id="emailError">Please enter a valid email address</span>
                         </div>
+                        <!-- PHONE NUMBER FIELD ADDED BELOW -->
+                        <div class="mb-4">
+                            <label for="phone" class="block text-sm font-medium">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full" required aria-required="true">
+                            <span class="error" id="phoneError">Please enter a valid phone number</span>
+                        </div>
+                        <!-- END OF NEW FIELD -->
                         <div class="mb-4">
                             <label for="message" class="block text-sm font-medium">Message</label>
                             <textarea id="message" name="message" rows="4" class="w-full" required aria-required="true"></textarea>
@@ -1046,13 +1053,16 @@
                 e.preventDefault();
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
                 const message = document.getElementById('message').value.trim();
                 const honeypot = document.getElementById('honeypot').value;
                 const nameError = document.getElementById('nameError');
                 const emailError = document.getElementById('emailError');
+                const phoneError = document.getElementById('phoneError');
                 const messageError = document.getElementById('messageError');
                 nameError.style.display = 'none';
                 emailError.style.display = 'none';
+                phoneError.style.display = 'none';
                 messageError.style.display = 'none';
                 let isValid = true;
                 if (!name) {
@@ -1061,6 +1071,10 @@
                 }
                 if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     emailError.style.display = 'block';
+                    isValid = false;
+                }
+                if (!phone || !/^[\d\s\-\+\(\)]+$/.test(phone)) {
+                    phoneError.style.display = 'block';
                     isValid = false;
                 }
                 if (!message) {
@@ -1082,4 +1096,3 @@
     </script>
 </body>
 </html>
-
