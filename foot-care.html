@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="Images/favicon.svg" />
+    <link rel="shortcut icon" href="Images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="LAHC" />
+    <link rel="manifest" href="Images/site.webmanifest" />
+
+    <meta name="description" content="Professional in-home foot care for seniors in Greater Vancouver. Certified nursing foot care to prevent pain, infections, and mobility issues — all in the comfort of home.">
+    <meta name="keywords" content="foot care seniors Vancouver, nursing foot care at home, diabetic foot care, corn callus treatment seniors, toenail care elderly">
+    <meta name="author" content="Live At Home Care">
+    <title>Foot Care for Seniors | In-Home Nursing Foot Care Vancouver</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="In-Home Foot Care for Seniors – Live At Home Care">
+    <meta property="og:description" content="Certified nursing foot care brought to your door in Greater Vancouver. Safe, gentle, and preventative care for seniors.">
+    <meta property="og:image" content="https://lahc.ca/images/foot-care-senior.jpg">
+    <meta property="og:url" content="https://lahc.ca/foot-care.html">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body{font-family:'Montserrat',sans-serif;background:#fff;color:#3a3a2e;margin:0;padding:0;scroll-behavior:smooth;}
+        h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:#3a3a2e;}
+        .navbar{transition:background-color .3s ease;padding:.5rem 0;background:#89b0ae;border-bottom:1px solid #bee3db;height:100px;display:flex;align-items:center;position:fixed;top:0;width:100%;z-index:1000;}
+        .navbar.scrolled{box-shadow:0 2px 10px rgba(58,58,46,.1);}
+        .logo-img{filter:grayscale(30%);transition:all .3s;height:120px;width:auto;object-fit:contain;}
+        .logo-img:hover{filter:grayscale(0);transform:scale(1.1);}
+        .nav-link{color:#faf9f9;font-size:1.25rem;padding:.25rem .5rem;position:relative;text-decoration:none;}
+        .nav-link:hover{color:#bee3db;}
+        .nav-item.has-dropdown{position:relative;}
+        .dropdown{display:none;position:absolute;background:#faf9f9;padding:0;width:200px;top:100%;left:0;margin-top:0;z-index:10;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;}
+        .nav-item.has-dropdown:hover .dropdown{display:block;opacity:1;}
+        .nav-item.has-dropdown.active .dropdown{display:block;}
+        .dropdown a{display:block;padding:.75rem 1rem;color:#3a3a2e;font-size:1rem;text-decoration:none;}
+        .dropdown a:hover{background:#bee3db;color:#3a3a2e;}
+        .hero{background:linear-gradient(90deg,#89b0ae,#bee3db);color:#fff;padding:8rem 0 5rem;text-align:center;margin-top:100px;}
+        .content-section{padding:4rem 0;background:#faf9f9;}
+        .benefits-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+        .benefit-card{background:#fff;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(58,58,46,.08);border:1px solid #bee3db;transition:all .3s;}
+        .benefit-card:hover{transform:translateY(-8px);box-shadow:0 10px 25px rgba(58,58,46,.15);}
+        .benefit-icon{font-size:2.5rem;color:#89b0ae;margin-bottom:1rem;}
+        .cta-button{display:inline-block;background:#89b0ae;color:#faf9f9;padding:1rem 2rem;border-radius:8px;font-weight:600;transition:all .3s;}
+        .cta-button:hover{background:#bee3db;color:#3a3a2e;}
+        footer{background:#89b0ae;color:#faf9f9;padding:2rem 0;border-top:1px solid #bee3db;text-align:center;}
+        footer a{color:#bee3db;}
+        footer a:hover{color:#fff;}
+        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001;}
+        .nav-menu{display:flex;align-items:center;}
+        .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%;}
+        .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);z-index:800;}
+        .menu-overlay.active{display:block;}
+        @media (max-width:767px){
+            .menu-toggle{display:block;top:50px;}
+            .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
+            .logo-wrapper{margin-bottom:1rem;}
+            .logo-img{height:120px;max-width:100%;}
+            .nav-menu{display:none;position:fixed;top:100px;left:0;width:250px;height:calc(100% - 100px);background:#89b0ae;flex-direction:column;padding:1rem;z-index:900;transform:translateX(-100%);transition:transform .3s ease-in-out;}
+            .nav-menu.active{display:flex;transform:translateX(0);}
+            .nav-item{margin:.5rem 0;width:100%;text-align:left;}
+            .nav-link{color:#faf9f9;padding:.75rem;font-size:1.2rem;display:block;}
+            .dropdown{display:none;position:static;background:#faf9f9;padding-left:1rem;margin-top:0;width:100%;}
+            .nav-item.has-dropdown.active .dropdown{display:block;}
+        }
+        @media (min-width:768px){
+            .nav-menu{flex-direction:row;position:static;padding:0;background:transparent;}
+            .nav-item{margin:0 .5rem;position:relative;}
+            .logo-img{height:160px;}
+            .navbar .container{justify-content:space-between;}
+            .menu-toggle{display:none;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar – Identical to index.html (including mobile behavior) -->
+    <nav class="navbar">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center logo-wrapper">
+                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img" loading="lazy">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu">
+                <div class="nav-item"><a href="index.html#home" class="nav-link">Home</a></div>
+                <div class="nav-item has-dropdown">
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <div class="dropdown">
+                        <a href="index.html#about">About Us</a>
+                        <a href="our-community.html">Our Community</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <div class="dropdown">
+                        <a href="personal-care.html">Personal Care</a>
+                        <a href="companionship.html">Companionship</a>
+                        <a href="it-tech-support.html">IT/Tech Support</a>
+                        <a href="alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
+                        <a href="medication-management.html">Medication Management</a>
+                        <a href="nursing-services.html">Nursing Services</a>
+                        <a href="red-light-therapy.html">Red Light Therapy</a>
+                        <a href="foot-care.html">Foot Care</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></div>
+                <div class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></div>
+                <div class="nav-item"><a href="careers.html" class="nav-link">Careers</a></div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">In-Home Foot Care for Seniors</h1>
+            <p class="text-xl md:text-2xl mb-6">Professional nursing foot care brought directly to your home in Greater Vancouver — gentle, safe, and preventative.</p>
+            <a href="index.html#contact" class="cta-button text-lg">Book Your Foot Care Visit</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <img src="images/foot-care-senior.jpg" alt="Senior receiving gentle foot care at home" class="w-full max-w-3xl mx-auto rounded-2xl shadow-xl" loading="lazy">
+            </div>
+            <h2 class="text-3xl font-bold text-center mb-8">Healthy Feet = Better Mobility & Independence</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-12">
+                Our certified LPNs and foot care specialists provide complete nursing foot care in the comfort of your home. No stressful trips to a clinic — we bring everything needed to keep your feet healthy, pain-free, and infection-free.
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card text-center">
+                    <i class="fas fa-cut benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Thickened & Ingrown Toenail Trimming</h3>
+                    <p>Safe, precise clipping and filing — especially important for diabetics and those with poor vision.</p>
+                </div>
+                <div class="benefit-card text-center">
+                    <i class="fas fa-socks benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Corn & Callus Reduction</h3>
+                    <p>Gentle removal of painful corns and hardened calluses to relieve pressure and discomfort.</p>
+                </div>
+                <div class="benefit-card text-center">
+                    <i class="fas fa-vial benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Fungal Nail & Skin Treatment</h3>
+                    <p>Assessment and treatment of fungal infections, dry cracked heels, and athlete’s foot.</p>
+                </div>
+                <div class="benefit-card text-center">
+                    <i class="fas fa-heartbeat benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Diabetic & Circulatory Foot Care</h3>
+                    <p>Specialized care to prevent ulcers, infections, and complications for those with diabetes or poor circulation.</p>
+                </div>
+                <div class="benefit-card text-center">
+                    <i class="fas fa-spa benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Moisturizing & Foot Massage</h3>
+                    <p>Hydrating treatment and light massage to improve comfort and circulation.</p>
+                </div>
+                <div class="benefit-card text-center">
+                    <i class="fas fa-shield-alt benefit-icon"></i>
+                    <h3 class="text-xl font-semibold mb-3">Infection Prevention Education</h3>
+                    <p>Tips on daily foot hygiene, proper footwear, and early warning signs.</p>
+                </div>
+            </div>
+
+            <div class="my-16 text-center">
+                <h2 class="text-3xl font-bold mb-6">What to Expect</h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Your foot care nurse arrives with a portable kit and sterile instruments. You relax in your favorite chair while we gently care for your feet — usually in 30–45 minutes. All tools are single-use or properly sterilized.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
+                <h2 class="text-3xl font-bold mb-4">Keep Your Feet Happy & Healthy</h2>
+                <p class="text-xl mb-8">Regular foot care prevents pain, falls, and serious complications.</p>
+                <a href="index.html#flood" class="cta-button text-xl px-8 py-4">Book Foot Care Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container mx-auto px-4">
+            <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
+            <div class="space-x-4 mb-2">
+                <a href="privacy-policy.html">Privacy Policy</a> |
+                <a href="terms-of-use.html">Terms of Service</a>
+            </div>
+            <div class="space-x-4">
+                <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu + scroll script (identical to index.html) -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        if (menuToggle && navMenu && menuOverlay) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+            menuOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 767) {
+                        e.preventDefault();
+                        link.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
