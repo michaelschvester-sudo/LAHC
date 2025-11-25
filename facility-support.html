@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="Images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="Images/favicon.svg" />
-    <link rel="shortcut icon" href="Images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/Images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/Images/favicon.svg" />
+    <link rel="shortcut icon" href="/Images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="LAHC" />
-    <link rel="manifest" href="Images/site.webmanifest" />
+    <link rel="manifest" href="/Images/site.webmanifest" />
     <meta name="description" content="Private top-up care inside independent living, assisted living & long-term care facilities in Greater Vancouver. Faster response, dedicated caregivers, foot care, red light therapy & more.">
     <meta name="keywords" content="private care assisted living Vancouver, extra care retirement home North Vancouver, top-up care long term care">
     <meta name="author" content="Live At Home Care">
@@ -31,7 +31,7 @@
         .nav-item.has-dropdown:hover .dropdown,.nav-item.has-dropdown.active .dropdown{display:block;opacity:1}
         .dropdown a{display:block;padding:.75rem 1rem;color:#3a3a2e;font-size:1rem;text-decoration:none}
         .dropdown a:hover{background-color:#bee3db;color:#3a3a2e}
-        .hero-section{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/facility-hero.jpg') center/cover no-repeat fixed;margin-top:100px}
+        .hero-section{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('/images/facility-hero.jpg') center/cover no-repeat fixed;margin-top:100px}
         .hero-section h1{font-size:4.2rem;line-height:1.1;font-weight:800;color:white;text-shadow:3px 3px 15px rgba(0,0,0,.8)}
         .hero-section p{font-size:1.5rem;max-width:1000px;margin:2rem auto 3rem;color:#faf9f9;opacity:0.95}
         .btn-primary{background:#89b0ae;color:#faf9f9;padding:1.1rem 2.8rem;border-radius:12px;font-size:1.2rem;font-weight:600;transition:all .4s;box-shadow:0 8px 25px rgba(137,176,174,.4)}
@@ -71,54 +71,50 @@
     </style>
 </head>
 <body>
-
-    <!-- EXACT SAME NAVBAR AS index.html -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center logo-wrapper">
-                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img">
+            <a href="/" class="flex items-center logo-wrapper">
+                <img src="/images/logo.png" alt="Live At Home Care Logo" class="logo-img">
             </a>
             <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-menu">
-                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="/" class="nav-link">Home</a></div>
                 <div class="nav-item has-dropdown">
-                    <a href="index.html#about" class="nav-link">About</a>
-                    <div class="dropdown"><a href="index.html#about">About Us</a><a href="our-community.html">Our Community</a></div>
+                    <a href="/#about" class="nav-link">About</a>
+                    <div class="dropdown"><a href="/#about">About Us</a><a href="/our-community.html">Our Community</a></div>
                 </div>
                 <div class="nav-item has-dropdown">
-                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="/#services" class="nav-link">Services</a>
                     <div class="dropdown">
-                        <a href="personal-care.html">Personal Care</a>
-                        <a href="companionship.html">Companionship</a>
-                        <a href="it-tech-support.html">IT/Tech Support</a>
-                        <a href="alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
-                        <a href="medication-management.html">Medication Management</a>
-                        <a href="nursing-services.html">Nursing Services</a>
-                        <a href="red-light-therapy.html">Red Light Therapy</a>
-                        <a href="foot-care.html">Foot Care</a>
-                        <a href="facility-support.html">Care in Facilities</a>
+                        <a href="/personal-care.html">Personal Care</a>
+                        <a href="/companionship.html">Companionship</a>
+                        <a href="/it-tech-support.html">IT/Tech Support</a>
+                        <a href="/alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
+                        <a href="/medication-management.html">Medication Management</a>
+                        <a href="/nursing-services.html">Nursing Services</a>
+                        <a href="/red-light-therapy.html">Red Light Therapy</a>
+                        <a href="/foot-care.html">Foot Care</a>
+                        <a href="/facility-support.html">Care in Facilities</a>
                     </div>
                 </div>
-                <div class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></div>
-                <div class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></div>
-                <div class="nav-item"><a href="careers.html" class="nav-link">Careers</a></div>
+                <div class="nav-item"><a href="/#faq" class="nav-link">FAQ</a></div>
+                <div class="nav-item"><a href="/#contact" class="nav-link">Contact</a></div>
+                <div class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></div>
             </div>
         </div>
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Hero -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Private Top-Up Care<br>in Retirement & Care Facilities</h1>
             <p class="text-center">
                 Many families don’t realize this is possible: you can privately hire extra, dedicated care inside any independent living, assisted living, or long-term care residence, on top of the facility’s standard care package.
             </p>
-            <a href="index.html#contact" class="btn-primary">Book Your Free Consultation</a>
+            <a href="/#contact" class="btn-primary">Book Your Free Consultation</a>
         </div>
     </section>
 
-    <!-- Private Care That Complements Facility Support -->
     <section class="section bg-[#faf9f9] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Private Care That Complements Facility Support</h2>
@@ -145,7 +141,6 @@
         </div>
     </section>
 
-    <!-- Services Available Inside Any Facility -->
     <section class="section">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Services Available Inside Any Facility</h2>
@@ -181,7 +176,6 @@
         </div>
     </section>
 
-    <!-- How It Works -->
     <section class="section bg-[#e9f5f2] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">How It Works: Simple & Discreet</h2>
@@ -208,7 +202,6 @@
         </div>
     </section>
 
-    <!-- Final CTA – now SAME background as "Private Care That Complements Facility Support" -->
     <section class="cta-final text-center">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-6xl font-bold mb-8 text-[#3a3a2e]">Time for a Little Extra Help?</h2>
@@ -216,19 +209,18 @@
                 Many families already use our private top-up care inside facilities across Greater Vancouver.<br>
                 Most never knew this was an option, until they discovered Live At Home Care.
             </p>
-            <a href="index.html#contact" class="btn-primary text-xl px-12 py-5">Book Your Free Consultation Today</a>
+            <a href="/#contact" class="btn-primary text-xl px-12 py-5">Book Your Free Consultation Today</a>
             <p class="text-2xl mt-10 text-[#3a3a2e]">Call anytime: <strong>(778) 997-1100</strong></p>
         </div>
     </section>
 
-    <!-- EXACT SAME FOOTER -->
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
             <div class="space-x-4 mb-2 flex justify-center">
-                <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
                 <span>|</span>
-                <a href="terms-of-use.html" class="hover:text-white">Terms of Service</a>
+                <a href="/terms-of-use.html" class="hover:text-white">Terms of Service</a>
             </div>
             <div class="flex justify-center">
                 <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener noreferrer" class="text-3xl hover:text-white">
@@ -238,7 +230,6 @@
         </div>
     </footer>
 
-    <!-- Exact same script -->
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
