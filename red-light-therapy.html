@@ -14,7 +14,7 @@
     <meta name="author" content="Live At Home Care">
     <meta property="og:title" content="Red Light Therapy for Seniors – Live At Home Care">
     <meta property="og:description" content="Medical-grade full-body red light therapy brought to your home in North Vancouver & Greater Vancouver.">
-    <meta property="og:image" content="https://lahc.ca/images/red-light-therapy-senior.jpg">
+    <meta property="og:image" content="https://lahc.ca/images/red-light-hero.jpg">
     <meta property="og:url" content="https://lahc.ca/red-light-therapy.html">
     <meta property="og:type" content="website">
     <title>Red Light Therapy for Seniors | In-Home Treatment Vancouver</title>
@@ -45,7 +45,7 @@
         .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(58,58,46,.08);transition:all .4s;border:1px solid #bee3db;padding:3rem 2rem}
         .card:hover{transform:translateY(-12px);box-shadow:0 25px 50px rgba(58,58,46,.15)}
         .icon-circle{width:90px;height:90px;background:#89b0ae;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.8rem;margin:0 auto 1.5rem}
-        .cta-final{background:#faf9f9;padding:9rem 0;border-top:1px solid #bee3db;border-bottom:1px solid #bee3db}
+        .cta-final{background:#faf9f9;padding:9rem 0 7rem;border-top:1px solid #bee3db;border-bottom:1px solid #bee3db;text-align:center}
         footer{background:#89b0ae;color:#faf9f9;padding:2rem 0;border-top:1px solid #bee3db;text-align:center;}
         footer a{color:#bee3db;}
         footer a:hover{color:#fff;}
@@ -54,6 +54,8 @@
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%;}
         .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);z-index:800;}
         .menu-overlay.active{display:block;}
+
+        /* Mobile-specific fixes for final CTA */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px;}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
@@ -68,6 +70,10 @@
             .hero-section p{font-size:1.2rem}
             .section{padding:4rem 0}
             .icon-circle{width:70px;height:70px;font-size:2.2rem}
+            .cta-final{padding:5rem 1.5rem 4rem !important}
+            .cta-final h2{font-size:2.8rem !important;line-height:1.2}
+            .cta-final p.text-2xl{font-size:1.4rem !important;margin-bottom:2rem !important}
+            .cta-final .btn-primary{display:block;width:90%;max-width:360px;margin:0 auto 2rem;padding:1.2rem 1rem;font-size:1.3rem !important}
         }
         @media (min-width:768px){
             .nav-menu{flex-direction:row;position:static;padding:0;background:transparent;}
@@ -79,7 +85,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR – Services dropdown matches index.html exactly -->
+    <!-- NAVBAR – Full Services dropdown -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -119,7 +125,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- FULL-SCREEN HERO -->
+    <!-- HERO -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Red Light Therapy<br>for Seniors</h1>
@@ -130,7 +136,7 @@
         </div>
     </section>
 
-    <!-- BENEFITS – ORIGINAL ICONS RESTORED -->
+    <!-- BENEFITS -->
     <section class="section bg-[#faf9f9] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Science-Backed Benefits</h2>
@@ -162,19 +168,18 @@
         </div>
     </section>
 
-    <!-- HOW IT WORKS + IMAGE -->
+    <!-- HOW IT WORKS – text only -->
     <section class="section bg-[#e9f5f2] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">How It Works – Simple & Comfortable</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-16">
+            <p class="text-lg max-w-4xl mx-auto leading-relaxed">
                 A trained Live At Home Care team member arrives with our portable medical-grade panel. You relax in your favorite chair or bed for a comfortable 10–20 minute session — fully clothed, no heat, no UV, no downtime.
             </p>
-            <img src="images/red-light-therapy-senior.jpg" alt="Senior receiving red light therapy at home" class="rounded-2xl shadow-2xl max-w-4xl mx-auto" loading="lazy">
         </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="cta-final text-center">
+    <!-- FINAL CTA – now 100% mobile-perfect -->
+    <section class="cta-final">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-6xl font-bold mb-8 text-[#3a3a2e]">Ready to Feel the Difference?</h2>
             <p class="text-2xl mb-12 max-w-5xl mx-auto leading-relaxed text-[#3a3a2e]">
@@ -185,7 +190,7 @@
         </div>
     </section>
 
-    <!-- ORIGINAL FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -199,7 +204,6 @@
         </div>
     </footer>
 
-    <!-- ORIGINAL SCRIPT -->
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
