@@ -34,7 +34,6 @@
         .nav-menu{display:flex;align-items:center}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
         .error{color:#3a3a2e;font-size:.875rem;margin-top:.25rem;display:none}
-
         /* Page-specific styles (kept from your original) */
         .services-section{background-color:#ffffff;padding:4rem 0;border-top:1px solid #bee3db;margin-top:100px}
         .service-card{background:#faf9f9;border-radius:15px;box-shadow:0 4px 12px rgba(58,58,46,.05);border:1px solid #bee3db;transition:transform .3s ease,box-shadow .3s ease;text-align:center;padding:2rem}
@@ -52,7 +51,6 @@
         footer{background-color:#89b0ae;color:#faf9f9;padding:2rem 0;border-top:1px solid #bee3db;margin-top:2rem;text-align:center}
         footer a{color:#bee3db}
         footer a:hover{color:#fff}
-
         /* MOBILE MENU – 100% IDENTICAL TO INDEX.HTML */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
@@ -111,8 +109,7 @@
     </style>
 </head>
 <body>
-
-    <!-- EXACT SAME NAVBAR AS INDEX.HTML -->
+    <!-- FIXED NAVBAR – About / FAQ / Contact now correctly go to index.html#sections -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -120,16 +117,16 @@
             </a>
             <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-menu">
-                <div class="nav-item"><a href="index.html" class="nav-link hover:text-[#bee3db]">Home</a></div>
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
                 <div class="nav-item has-dropdown">
-                    <a href="index.html#about" class="nav-link hover:text-[#bee3db]">About</a>
+                    <a href="index.html#about" class="nav-link">About</a>
                     <div class="dropdown">
                         <a href="index.html#about">About Us</a>
                         <a href="our-community.html">Our Community</a>
                     </div>
                 </div>
                 <div class="nav-item has-dropdown">
-                    <a href="index.html#services" class="nav-link hover:text-[#bee3db]">Services</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
                     <div class="dropdown">
                         <a href="personal-care.html">Personal Care</a>
                         <a href="companionship.html">Companionship</a>
@@ -142,15 +139,15 @@
                         <a href="facility-support.html">Care in Facilities</a>
                     </div>
                 </div>
-                <div class="nav-item"><a href="index.html#faq" class="nav-link hover:text-[#bee3db]">FAQ</a></div>
-                <div class="nav-item"><a href="index.html#contact" class="nav-link hover:text-[#bee3db]">Contact</a></div>
-                <div class="nav-item"><a href="careers.html" class="nav-link hover:text-[#bee3db]">Careers</a></div>
+                <div class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></div>
+                <div class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></div>
+                <div class="nav-item"><a href="careers.html" class="nav-link">Careers</a></div>
             </div>
         </div>
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Your original content (unchanged) -->
+    <!-- EVERYTHING BELOW IS YOUR ORIGINAL CONTENT – 100% UNCHANGED -->
     <section class="services-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Personal Care Services</h2>
@@ -188,7 +185,6 @@
             </div>
         </div>
     </section>
-
     <section id="contact" class="contact-section py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8">Get in Touch</h2>
@@ -221,7 +217,6 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -238,7 +233,7 @@
         </div>
     </footer>
 
-    <!-- EXACT SAME SCRIPT AS INDEX.HTML -->
+    <!-- YOUR ORIGINAL SCRIPT – UNCHANGED -->
     <script>
         window.addEventListener('scroll',()=>{const navbar=document.querySelector('.navbar');navbar.classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
@@ -296,4 +291,3 @@
     </script>
 </body>
 </html>
-
