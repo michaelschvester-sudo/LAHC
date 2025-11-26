@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- all your existing head stays 100% the same -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Images/favicon-96x96.png" sizes="96x96" />
@@ -42,7 +41,6 @@
         .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998;}
         .menu-overlay.active{display:block;}
 
-        /* Mobile menu – exact copy from Nursing page */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px;}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
@@ -87,14 +85,13 @@
             .navbar .container{justify-content:space-between;}
         }
 
-        /* Your original page styles */
         .hero-section{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/red-light-hero.jpg') center/cover no-repeat fixed;margin-top:100px}
         .hero-section h1{font-size:4.2rem;line-height:1.1;font-weight:800;color:white;text-shadow:3px 3px 15px rgba(0,0,0,.8)}
         .hero-section p{font-size:1.5rem;max-width:1000px;margin:2rem auto 3rem;color:#faf9f9;opacity:0.95}
-        .btn-primary{background:#89b0ae;color:#faf9f9;padding:1.1rem 2.8rem;border-radius:12px;font-size:1.2rem;font-weight:600;transition:all .4s;box-shadow:0 8px 25px rgba(137,176,174,.4)}
+        .btn-primary{background:#89b0ae;color:#faf9f9;padding:1.1rem 2.8rem;border-radius:12px;font-size:1.2rem;font-weight:600;transition:all .4s;box-shadow:0 8px 25px rgba(137,176,174,.4);display:inline-block}
         .btn-primary:hover{background:#bee3db;color:#3a3a2e;transform:translateY(-4px)}
         .section{padding:7rem 0}
-        .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(58,58,46,.08);transition:all .4s;border:1px solid #bee3db;padding:3rem 2rem}
+        .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(58,58,46,.08);transition:all .4s;border:1px solid #bee3db;padding:3rem 2rem;text-align:center}
         .card:hover{transform:translateY(-12px);box-shadow:0 25px 50px rgba(58,58,46,.15)}
         .icon-circle{width:90px;height:90px;background:#89b0ae;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.8rem;margin:0 auto 1.5rem}
         .cta-final{background:#faf9f9;padding:9rem 0 7rem;border-top:1px solid #bee3db;border-bottom:1px solid #bee3db;text-align:center}
@@ -102,7 +99,6 @@
         footer a{color:#bee3db;}
         footer a:hover{color:#fff;}
 
-        /* Mobile fixes – ONLY the bottom CTA button is improved */
         @media (max-width:767px){
             .hero-section{height:auto;min-height:80vh;padding-top:140px;background-attachment:scroll}
             .hero-section h1{font-size:2.8rem}
@@ -110,24 +106,18 @@
             .section{padding:4rem 0}
             .icon-circle{width:70px;height:70px;font-size:2.2rem}
             .cta-final{padding:6rem 1.5rem 5rem}
-            .cta-final h2{font-size:2.8rem !important;line-height:1.2}
-            .cta-final p.text-2xl{font-size:1.4rem !important;margin-bottom:2.5rem !important}
+            .cta-final h2{font-size:2.8rem;line-height:1.2}
+            .cta-final p.text-2xl{font-size:1.4rem;margin-bottom:2rem}
             .cta-final .btn-primary{
-                display:block !important;
-                width:90% !important;
-                max-width:380px !important;
-                margin:0 auto 2.5rem auto !important;
-                padding:1.4rem 1rem !important;
-                font-size:1.35rem !important;
-                line-height:1.2 !important;
-                white-space:nowrap !important; /* prevents text wrap */
+                display:block;width:92%;max-width:400px;margin:0 auto 2.5rem auto;
+                padding:1.4rem 1rem;font-size:1.25rem;line-height:1.2;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Perfect navbar (unchanged) -->
+    <!-- Perfect navbar from your Nursing page -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -165,7 +155,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Your original content – unchanged -->
+    <!-- HERO -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Red Light Therapy<br>for Seniors</h1>
@@ -176,6 +166,7 @@
         </div>
     </section>
 
+    <!-- BENEFITS – original icons restored -->
     <section class="section bg-[#faf9f9] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">Science-Backed Benefits</h2>
@@ -184,22 +175,22 @@
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
                 <div class="card">
-                    <div class="icon-circle">Heart icon</div>
+                    <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Reduces Joint Pain & Arthritis</h3>
                     <p>Improves circulation and decreases inflammation — many clients feel relief after just a few sessions.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle">Running icon</div>
+                    <div class="icon-circle"><i class="fas fa-running"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Faster Recovery & Mobility</h3>
                     <p>Supports muscle recovery and reduces stiffness, helping seniors stay active and independent.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle">Spa icon</div>
+                    <div class="icon-circle"><i class="fas fa-spa"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Improves Skin Health & Healing</h3>
                     <p>Stimulates collagen, reduces wrinkles, and speeds wound healing.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle">Bed icon</div>
+                    <div class="icon-circle"><i class="fas fa-bed"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Better Sleep & Mood</h3>
                     <p>Regulates circadian rhythm and boosts serotonin — clients often report sleeping better and feeling calmer.</p>
                 </div>
@@ -207,6 +198,7 @@
         </div>
     </section>
 
+    <!-- HOW IT WORKS -->
     <section class="section bg-[#e9f5f2] border-t border-b border-[#bee3db]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-12">How It Works – Simple & Comfortable</h2>
@@ -216,18 +208,19 @@
         </div>
     </section>
 
-    <!-- Bottom CTA – now perfect on mobile -->
+    <!-- FINAL CTA – button now perfect on mobile -->
     <section class="cta-final">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-6xl font-bold mb-8 text-[#3a3a2e]">Ready to Feel the Difference?</h2>
             <p class="text-2xl mb-12 max-w-5xl mx-auto leading-relaxed text-[#3a3a2e]">
                 Try your first full-body red light therapy session completely free — we bring everything to you.
             </p>
-            <a href="index.html#contact" class="btn-primary text-xl px-12 py-5">Book Your Free Trial Session</a>
+            <a href="index.html#contact" class="btn-primary block w-full max-w-md mx-auto py-5 text-xl">Book Your Free Trial Session</a>
             <p class="text-2xl mt-10 text-[#3a3a2e]">Call anytime: <strong>(778) 997-1100</strong></p>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -236,12 +229,12 @@
                 <a href="terms-of-use.html">Terms of Service</a>
             </div>
             <div class="space-x-4">
-                <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener">Facebook icon</a>
+                <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Perfect script from Nursing page -->
+    <!-- Perfect working script -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
