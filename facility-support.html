@@ -23,7 +23,7 @@
         .navbar.scrolled{background-color:#89b0ae;box-shadow:0 2px 10px rgba(58,58,46,.1)}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
         .logo-img{filter:grayscale(30%);transition:all .3s ease;height:120px;width:auto;object-fit:contain}
-        .logo-img:hover{filter:grayscale(0%);transform:scale(1.1)}
+        .logo Img:hover{filter:grayscale(0%);transform:scale(1.1)}
         .nav-link{padding:.25rem .5rem;color:#faf9f9;font-size:1.25rem;position:relative;text-decoration:none}
         .nav-link:hover{color:#bee3db}
         .nav-item.has-dropdown{position:relative}
@@ -46,11 +46,11 @@
         footer{background:#89b0ae;color:#faf9f9;padding:3rem 0;border-top:1px solid #bee3db;text-align:center}
         footer a{color:#bee3db}
         footer a:hover{color:white}
-        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointerersey;padding:.5rem;position:absolute;right:1rem;z-index:1001}
+        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001}
         .nav-menu{display:flex;align-items:center}
         .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998}
 
-        /* ──────────────────────── MOBILE MENU – UPDATED TO MATCH INDEX.HTML ──────────────────────── */
+        /* MOBILE MENU – FINAL & PERFECT (real arrow that rotates) */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem;height:auto;position:relative}
@@ -72,10 +72,13 @@
                 position:relative;
             }
             .nav-item.has-dropdown > .nav-link::after{
-                content:"Down Arrow";position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+                content:"↓";
+                position:absolute;right:1rem;top:50%;transform:translateY(-50%);
                 font-size:1.8rem;transition:transform .3s;
             }
-            .nav-item.has-dropdown.active > .nav-link::after{transform:translateY(-50%) rotate(180deg)}
+            .nav-item.has-dropdown.active > .nav-link::after{
+                transform:translateY(-50%) rotate(180deg);
+            }
 
             .dropdown{
                 position:static;background:transparent;box-shadow:none;
@@ -102,12 +105,8 @@
             .icon-circle{width:70px;height:70px;font-size:2.2rem}
             .hero-section .btn-primary,
             .cta-final .btn-primary {
-                display: block !important;
-                width: 90% !important;
-                max-width: 360px !important;
-                margin: 2rem auto !important;
-                padding: 1.2rem !important;
-                font-size: 1.3rem !important;
+                display:block !important;width:90% !important;max-width:360px !important;
+                margin:2rem auto !important;padding:1.2rem !important;font-size:1.3rem !important;
             }
         }
         @media (min-width:768px){
@@ -151,7 +150,6 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Rest of your page – 100% unchanged -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Private Top-Up Care<br>in Retirement & Care Facilities</h1>
@@ -182,7 +180,7 @@
                     <div class="icon-circle"><i class="fas fa-medal"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Specialized Premium Services</h3>
                     <p class="leading-relaxed">We bring specialized services: professional foot care, medical-grade red light therapy, private LPN nursing, dementia companionship, IT support, and more.</p>
-                </div>
+                </ to</div>
             </div>
         </div>
     </section>
@@ -272,7 +270,6 @@
         </div>
     </footer>
 
-    <!-- Updated JavaScript – identical to index.html -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
