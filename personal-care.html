@@ -73,13 +73,14 @@
                 color:#faf9f9;border-bottom:1px solid rgba(255,255,255,.15);
                 position:relative;
             }
-            .nav-item.has-dropdown > .nav-link::after{
-                content:"Down Arrow";position:absolute;right:1rem;top:50%;transform:translateY(-50%);
-                font-size:1.8rem;transition:transform .3s;
-            }
-            .nav-item.has-dropdown.active > .nav-link::after{
-                transform:translateY(-50%) rotate(180deg);
-            }
+           .nav-item.has-dropdown > .nav-link::after{
+    content:"↓";                 /* ← actual arrow symbol */
+    position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+    font-size:1.8rem;transition:transform .3s;
+}
+.nav-item.has-dropdown.active > .nav-link::after{
+    transform:translateY(-50%) rotate(180deg);
+}
             .dropdown{
                 position:static;background:transparent;box-shadow:none;
                 width:100%;padding:0 0 0 1.5rem;display:none;
@@ -295,3 +296,4 @@
     </script>
 </body>
 </html>
+
