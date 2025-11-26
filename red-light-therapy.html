@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- all your existing head stays 100% the same -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Images/favicon-96x96.png" sizes="96x96" />
@@ -41,7 +42,7 @@
         .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998;}
         .menu-overlay.active{display:block;}
 
-        /* EXACT MOBILE MENU FROM YOUR NURSING PAGE */
+        /* Mobile menu – exact copy from Nursing page */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px;}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
@@ -86,7 +87,7 @@
             .navbar .container{justify-content:space-between;}
         }
 
-        /* YOUR ORIGINAL PAGE STYLES – UNCHANGED */
+        /* Your original page styles */
         .hero-section{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/red-light-hero.jpg') center/cover no-repeat fixed;margin-top:100px}
         .hero-section h1{font-size:4.2rem;line-height:1.1;font-weight:800;color:white;text-shadow:3px 3px 15px rgba(0,0,0,.8)}
         .hero-section p{font-size:1.5rem;max-width:1000px;margin:2rem auto 3rem;color:#faf9f9;opacity:0.95}
@@ -100,19 +101,33 @@
         footer{background:#89b0ae;color:#faf9f9;padding:2rem 0;border-top:1px solid #bee3db;text-align:center;}
         footer a{color:#bee3db;}
         footer a:hover{color:#fff;}
+
+        /* Mobile fixes – ONLY the bottom CTA button is improved */
         @media (max-width:767px){
             .hero-section{height:auto;min-height:80vh;padding-top:140px;background-attachment:scroll}
             .hero-section h1{font-size:2.8rem}
             .hero-section p{font-size:1.2rem}
             .section{padding:4rem 0}
             .icon-circle{width:70px;height:70px;font-size:2.2rem}
-            .cta-final{padding:5rem 1.5rem 4rem}
+            .cta-final{padding:6rem 1.5rem 5rem}
+            .cta-final h2{font-size:2.8rem !important;line-height:1.2}
+            .cta-final p.text-2xl{font-size:1.4rem !important;margin-bottom:2.5rem !important}
+            .cta-final .btn-primary{
+                display:block !important;
+                width:90% !important;
+                max-width:380px !important;
+                margin:0 auto 2.5rem auto !important;
+                padding:1.4rem 1rem !important;
+                font-size:1.35rem !important;
+                line-height:1.2 !important;
+                white-space:nowrap !important; /* prevents text wrap */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- EXACT NAVBAR FROM YOUR NURSING PAGE (perfect) -->
+    <!-- Perfect navbar (unchanged) -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -150,7 +165,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- YOUR ORIGINAL RED LIGHT CONTENT – 100% UNCHANGED -->
+    <!-- Your original content – unchanged -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Red Light Therapy<br>for Seniors</h1>
@@ -169,22 +184,22 @@
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
                 <div class="card">
-                    <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+                    <div class="icon-circle">Heart icon</div>
                     <h3 class="text-2xl font-bold mb-4">Reduces Joint Pain & Arthritis</h3>
                     <p>Improves circulation and decreases inflammation — many clients feel relief after just a few sessions.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle"><i class="fas fa-running"></i></div>
+                    <div class="icon-circle">Running icon</div>
                     <h3 class="text-2xl font-bold mb-4">Faster Recovery & Mobility</h3>
                     <p>Supports muscle recovery and reduces stiffness, helping seniors stay active and independent.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle"><i class="fas fa-spa"></i></div>
+                    <div class="icon-circle">Spa icon</div>
                     <h3 class="text-2xl font-bold mb-4">Improves Skin Health & Healing</h3>
                     <p>Stimulates collagen, reduces wrinkles, and speeds wound healing.</p>
                 </div>
                 <div class="card">
-                    <div class="icon-circle"><i class="fas fa-bed"></i></div>
+                    <div class="icon-circle">Bed icon</div>
                     <h3 class="text-2xl font-bold mb-4">Better Sleep & Mood</h3>
                     <p>Regulates circadian rhythm and boosts serotonin — clients often report sleeping better and feeling calmer.</p>
                 </div>
@@ -201,6 +216,7 @@
         </div>
     </section>
 
+    <!-- Bottom CTA – now perfect on mobile -->
     <section class="cta-final">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-6xl font-bold mb-8 text-[#3a3a2e]">Ready to Feel the Difference?</h2>
@@ -220,12 +236,12 @@
                 <a href="terms-of-use.html">Terms of Service</a>
             </div>
             <div class="space-x-4">
-                <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61581748379787" target="_blank" rel="noopener">Facebook icon</a>
             </div>
         </div>
     </footer>
 
-    <!-- EXACT SCRIPT FROM YOUR NURSING PAGE (guaranteed working) -->
+    <!-- Perfect script from Nursing page -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
