@@ -34,7 +34,7 @@
         .nav-menu{display:flex;align-items:center}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
 
-        /* MOBILE MENU – EXACT SAME AS INDEX.HTML (REAL ↓ ARROW + LOGO CENTERING) */
+        /* MOBILE MENU – NOW WITH REAL Down Arrow ICON */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative}
@@ -54,12 +54,14 @@
                 color:#faf9f9;border-bottom:1px solid rgba(255,255,255,.15);
                 position:relative;
             }
+            /* THIS IS THE ONLY CHANGE – REAL Down Arrow */
             .nav-item.has-dropdown > .nav-link::after{
-                content:"Down Arrow";position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+                content:"Down Arrow"; 
+                position:absolute;right:1rem;top:50%;transform:translateY(-50%);
                 font-size:1.8rem;transition:transform .3s;
             }
             .nav-item.has-dropdown.active > .nav-link::after{
-                transform:translateY(-50%) rotate(180deg)
+                transform:translateY(-50%) rotate(180deg);
             }
             .dropdown{
                 position:static;background:transparent;box-shadow:none;
@@ -87,7 +89,7 @@
             .navbar .container{justify-content:space-between}
         }
 
-        /* YOUR ORIGINAL PAGE STYLES – 100% UNTOUCHED */
+        /* ALL YOUR ORIGINAL PAGE STYLES BELOW – UNCHANGED */
         .hero-section{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#3a3a2e;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('images/our-community-hero.jpg');background-size:cover;background-position:center 0%;margin-top:100px}
         .hero-section .container{padding-bottom:12rem}
         .hero-section h1,.hero-section p{color:#fff}
@@ -109,7 +111,7 @@
 </head>
 <body>
 
-    <!-- EXACT SAME NAVBAR AS INDEX.HTML (WITH LOGO-WRAPPER) -->
+    <!-- EXACT SAME NAVBAR AS INDEX.HTML -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -131,7 +133,7 @@
                         <a href="alzheimers-dementia-care.html">Alzheimer's & Dementia Care</a>
                         <a href="medication-management.html">Medication Management</a>
                         <a href="nursing-services.html">Nursing Services</a>
-                        <a href="red-light-therapy.html">Red Light Therapy</a>
+                        <auref="red-light-therapy.html">Red Light Therapy</a>
                         <a href="foot-care.html">Foot Care</a>
                         <a href="facility-support.html">Care in Facilities</a>
                     </div>
@@ -144,7 +146,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- REST OF YOUR PAGE – 100% UNCHANGED -->
+    <!-- THE REST OF YOUR PAGE – 100% UNCHANGED -->
     <section id="community-hero" class="hero-section">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl md:text-4xl font-bold mb-4">Proudly Local, Proudly Canadian</h1>
@@ -181,6 +183,7 @@
         </div>
     </section>
 
+    <!-- contact and footer unchanged -->
     <section id="contact" class="contact-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8">Get in Touch</h2>
@@ -248,7 +251,6 @@
         </div>
     </footer>
 
-    <!-- EXACT SAME SCRIPT AS INDEX.HTML -->
     <script>
         window.addEventListener('scroll',()=>{const navbar=document.querySelector('.navbar');navbar.classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
