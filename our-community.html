@@ -34,7 +34,7 @@
         .nav-menu{display:flex;align-items:center}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
 
-        /* EXACT MOBILE MENU FROM INDEX.HTML – REAL ↓ ARROW */
+        /* MOBILE MENU – EXACT SAME AS INDEX.HTML (REAL ↓ ARROW + LOGO CENTERING) */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative}
@@ -58,7 +58,9 @@
                 content:"Down Arrow";position:absolute;right:1rem;top:50%;transform:translateY(-50%);
                 font-size:1.8rem;transition:transform .3s;
             }
-            .nav-item.has-dropdown.active > .nav-link::after{transform:translateY(-50%) rotate(180deg)}
+            .nav-item.has-dropdown.active > .nav-link::after{
+                transform:translateY(-50%) rotate(180deg)
+            }
             .dropdown{
                 position:static;background:transparent;box-shadow:none;
                 width:100%;padding:0 0 0 1.5rem;display:none;
@@ -85,7 +87,7 @@
             .navbar .container{justify-content:space-between}
         }
 
-        /* EVERYTHING BELOW IS YOUR ORIGINAL STYLING – UNTOUCHED */
+        /* YOUR ORIGINAL PAGE STYLES – 100% UNTOUCHED */
         .hero-section{height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#3a3a2e;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('images/our-community-hero.jpg');background-size:cover;background-position:center 0%;margin-top:100px}
         .hero-section .container{padding-bottom:12rem}
         .hero-section h1,.hero-section p{color:#fff}
@@ -107,7 +109,7 @@
 </head>
 <body>
 
-    <!-- EXACT NAVBAR FROM INDEX.HTML -->
+    <!-- EXACT SAME NAVBAR AS INDEX.HTML (WITH LOGO-WRAPPER) -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -142,7 +144,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- EVERYTHING BELOW IS 100% YOUR ORIGINAL CONTENT – NOT TOUCHED -->
+    <!-- REST OF YOUR PAGE – 100% UNCHANGED -->
     <section id="community-hero" class="hero-section">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl md:text-4xl font-bold mb-4">Proudly Local, Proudly Canadian</h1>
@@ -246,7 +248,7 @@
         </div>
     </footer>
 
-    <!-- EXACT MENU SCRIPT FROM INDEX.HTML + YOUR ORIGINAL FORM SCRIPT -->
+    <!-- EXACT SAME SCRIPT AS INDEX.HTML -->
     <script>
         window.addEventListener('scroll',()=>{const navbar=document.querySelector('.navbar');navbar.classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
