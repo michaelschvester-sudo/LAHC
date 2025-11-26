@@ -46,25 +46,60 @@
         footer{background:#89b0ae;color:#faf9f9;padding:3rem 0;border-top:1px solid #bee3db;text-align:center}
         footer a{color:#bee3db}
         footer a:hover{color:white}
-        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001}
+        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointerersey;padding:.5rem;position:absolute;right:1rem;z-index:1001}
         .nav-menu{display:flex;align-items:center}
-        .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);z-index:800}
-        .menu-overlay.active{display:block}
+        .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998}
+
+        /* ──────────────────────── MOBILE MENU – UPDATED TO MATCH INDEX.HTML ──────────────────────── */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem;height:auto;position:relative}
             .logo-img{height:100px}
-            .nav-menu{display:none;position:fixed;top:100px;left:0;width:250px;height:calc(100%-100px);background:#89b0ae;flex-direction:column;padding:1rem;z-index:900;transform:translateX(-100%);transition:transform .3s}
-            .nav-menu.active{display:flex;transform:translateX(0)}
-            .nav-link{font-size:1.2rem;padding:.75rem;display:block}
-            .dropdown{position:static;background:#faf9f9;padding-left:1rem;width:100%}
+
+            .nav-menu{
+                position:fixed;top:0;left:0;width:100vw;height:100vh;
+                background:#89b0ae;display:flex;flex-direction:column;
+                padding:120px 2rem 2rem;z-index:999;
+                transform:translateX(-100%);transition:transform .35s ease-in-out;
+                overflow-y:auto;
+            }
+            .nav-menu.active{transform:translateX(0)}
+
+            .nav-item{width:100%;margin:0}
+            .nav-link{
+                display:block;padding:1.1rem 0;font-size:1.5rem;
+                color:#faf9f9;border-bottom:1px solid rgba(255,255,255,.15);
+                position:relative;
+            }
+            .nav-item.has-dropdown > .nav-link::after{
+                content:"Down Arrow";position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+                font-size:1.8rem;transition:transform .3s;
+            }
+            .nav-item.has-dropdown.active > .nav-link::after{transform:translateY(-50%) rotate(180deg)}
+
+            .dropdown{
+                position:static;background:transparent;box-shadow:none;
+                width:100%;padding:0 0 0 1.5rem;display:none;
+            }
+            .nav-item.has-dropdown.active .dropdown{display:block}
+            .dropdown a{
+                padding:0.9rem 0;font-size:1.35rem;color:#bee3db;
+                border-bottom:none;
+            }
+            .dropdown a:hover{color:#ffffff;background:none}
+
+            .menu-toggle.close{
+                position:fixed;top:20px;right:20px;z-index:1001;
+                font-size:2rem;background:rgba(0,0,0,.3);border-radius:50%;
+                width:50px;height:50px;display:flex;align-items:center;justify-content:center;
+            }
+            .menu-overlay.active{display:block}
+
             .hero-section{height:auto;min-height:80vh;padding-top:140px;background-attachment:scroll}
             .hero-section h1{font-size:2.8rem}
             .hero-section p{font-size:1.2rem}
             .section{padding:4rem 0}
             .icon-circle{width:70px;height:70px;font-size:2.2rem}
-
-            /* ONLY THESE 9 LINES ARE NEW - fixes both buttons on mobile */
             .hero-section .btn-primary,
             .cta-final .btn-primary {
                 display: block !important;
@@ -82,7 +117,6 @@
     </style>
 </head>
 <body>
-    <!-- The entire <body> is 100 % identical to what you sent -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="/" class="flex items-center logo-wrapper">
@@ -116,6 +150,8 @@
         </div>
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Rest of your page – 100% unchanged -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>Private Top-Up Care<br>in Retirement & Care Facilities</h1>
@@ -235,11 +271,38 @@
             </div>
         </div>
     </footer>
+
+    <!-- Updated JavaScript – identical to index.html -->
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        if(menuToggle && navMenu && menuOverlay){
-            menuToggle.addEventListener('click',()=>{navMenu.classList.toggle('active');menuOverlay.classList.toggle('active')});
-            menuOverlay.addEventListener('click',()=>{navMenu.classList.remove('active');menuOverlay.classList.remove('active')});
-            d
+        window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
+        const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
+
+        function openMenu(){
+            navMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            menuToggle.innerHTML='<i class="fas fa-times"></i>';
+            menuToggle.classList.add('close');
+        }
+        function closeMenu(){
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.innerHTML='<i class="fas fa-bars"></i>';
+            menuToggle.classList.remove('close');
+        }
+
+        if(menuToggle&&navMenu&&menuOverlay){
+            menuToggle.addEventListener('click',()=>{navMenu.classList.contains('active')?closeMenu():openMenu()});
+            menuOverlay.addEventListener('click',closeMenu);
+
+            document.querySelectorAll('.nav-item.has-dropdown > .nav-link').forEach(link=>{
+                link.addEventListener('click',e=>{
+                    if(window.innerWidth<=767){
+                        e.preventDefault();
+                        link.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
