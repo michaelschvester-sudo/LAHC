@@ -26,25 +26,73 @@
         body{font-family:'Montserrat',sans-serif;background:#fff;color:#3a3a2e;margin:0;padding:0;scroll-behavior:smooth;}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:#3a3a2e;}
         .navbar{transition:background-color .3s ease;padding:.5rem 0;background:#89b0ae;border-bottom:1px solid #bee3db;height:100px;display:flex;align-items:center;position:fixed;top:0;width:100%;z-index:1000;}
-        .navbar.scrolled{box-shadow:0 2px 10px rgba(58,58,46,.1);}
+        .navbar.scrolled{background:#89b0ae;box-shadow:0 2px 10px rgba(58,58,46,.1);}
         .logo-img{filter:grayscale(30%);transition:all .3s;height:120px;width:auto;object-fit:contain;}
         .logo-img:hover{filter:grayscale(0);transform:scale(1.1);}
         .nav-link{color:#faf9f9;font-size:1.25rem;padding:.25rem .5rem;position:relative;text-decoration:none;}
         .nav-link:hover{color:#bee3db;}
         .nav-item.has-dropdown{position:relative;}
         .dropdown{display:none;position:absolute;background:#faf9f9;padding:0;width:200px;top:100%;left:0;margin-top:0;z-index:10;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;}
-        .nav-item.has-dropdown:hover .dropdown{display:block;opacity:1;}
-        .nav-item.has-dropdown.active .dropdown{display:block;}
+        .nav-item.has-dropdown:hover .dropdown,.nav-item.has-dropdown.active .dropdown{display:block;opacity:1;}
         .dropdown a{display:block;padding:.75rem 1rem;color:#3a3a2e;font-size:1rem;text-decoration:none;}
         .dropdown a:hover{background:#bee3db;color:#3a3a2e;}
+        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001;}
+        .nav-menu{display:flex;align-items:center;}
+        .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%;}
+        .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998;}
+        .menu-overlay.active{display:block;}
 
-        /* Hero (same as facility-support.html) */
+        /* PERFECT MOBILE MENU — exact same as Red Light & Nursing pages */
+        @media (max-width:767px){
+            .menu-toggle{display:block;top:50px;}
+            .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
+            .logo-wrapper{margin-bottom:1rem;}
+            .logo-img{height:120px;max-width:100%;}
+            .nav-menu{
+                position:fixed;top:0;left:0;width:100vw;height:100vh;background:#89b0ae;
+                display:flex;flex-direction:column;padding:120px 2rem 2rem;z-index:999;
+                transform:translateX(-100%);transition:transform .35s ease-in-out;overflow-y:auto;
+            }
+            .nav-menu.active{transform:translateX(0);}
+            .nav-item{width:100%;margin:0;}
+            .nav-link{
+                display:block;padding:1.1rem 0;font-size:1.5rem;color:#faf9f9;
+                border-bottom:1px solid rgba(255,255,255,.15);position:relative;
+            }
+            .nav-item.has-dropdown > .nav-link::after{
+    content:"↓";                 /* ← actual arrow symbol */
+    position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+    font-size:1.8rem;transition:transform .3s;
+}
+.nav-item.has-dropdown.active > .nav-link::after{
+    transform:translateY(-50%) rotate(180deg);
+}
+            .dropdown{
+                position:static;background:transparent;box-shadow:none;width:100%;
+                padding:0 0 0 1.5rem;display:none;
+            }
+            .nav-item.has-dropdown.active .dropdown{display:block;}
+            .dropdown a{padding:0.9rem 0;font-size:1.35rem;color:#bee3db;}
+            .dropdown a:hover{color:#ffffff;background:none;}
+            .menu-toggle.close{
+                position:fixed;top:20px;right:20px;z-index:1001;font-size:2rem;
+                background:rgba(0,0,0,.3);border-radius:50%;width:50px;height:50px;
+                display:flex;align-items:center;justify-content:center;
+            }
+        }
+        @media (min-width:768px){
+            .nav-menu{flex-direction:row;position:static;padding:0;background:transparent;}
+            .nav-item{margin:0 .5rem;position:relative;}
+            .logo-img{height:160px;}
+            .navbar .container{justify-content:space-between;}
+        }
+
+        /* YOUR ORIGINAL FOOT CARE STYLES — 100% UNCHANGED */
         .hero-section{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/foot-care-senior.jpg') center/cover no-repeat fixed;margin-top:100px}
         .hero-section h1{font-size:4.2rem;line-height:1.1;font-weight:800;color:white;text-shadow:3px 3px 15px rgba(0,0,0,.8)}
         .hero-section p{font-size:1.5rem;max-width:1000px;margin:2rem auto 3rem;color:#faf9f9;opacity:0.95}
         .btn-primary{background:#89b0ae;color:#faf9f9;padding:1.1rem 2.8rem;border-radius:12px;font-size:1.2rem;font-weight:600;transition:all .4s;box-shadow:0 8px 25px rgba(137,176,174,.4)}
         .btn-primary:hover{background:#bee3db;color:#3a3a2e;transform:translateY(-4px)}
-
         .content-section{padding:4rem 0;background:#faf9f9;}
         .benefits-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
         .benefit-card{background:#fff;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(58,58,46,.08);border:1px solid #bee3db;transition:all .3s;}
@@ -55,48 +103,26 @@
         footer{background:#89b0ae;color:#faf9f9;padding:2rem 0;border-top:1px solid #bee3db;text-align:center;}
         footer a{color:#bee3db;}
         footer a:hover{color:#fff;}
-        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001;}
-        .nav-menu{display:flex;align-items:center;}
-        .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%;}
-        .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.5);z-index:800;}
-        .menu-overlay.active{display:block;}
-        @media (max-width:767px){
-            .menu-toggle{display:block;top:50px;}
-            .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative;}
-            .logo-wrapper{margin-bottom:1rem;}
-            .logo-img{height:120px;max-width:100%;}
-            .nav-menu{display:none;position:fixed;top:100px;left:0;width:250px;height:calc(100% - 100px);background:#89b0ae;flex-direction:column;padding:1rem;z-index:900;transform:translateX(-100%);transition:transform .3s ease-in-out;}
-            .nav-menu.active{display:flex;transform:translateX(0);}
-            .nav-item{margin:.5rem 0;width:100%;text-align:left;}
-            .nav-link{color:#faf9f9;padding:.75rem;font-size:1.2rem;display:block;}
-            .dropdown{display:none;position:static;background:#faf9f9;padding-left:1rem;margin-top:0;width:100%;}
-            .nav-item.has-dropdown.active .dropdown{display:block;}
 
+        @media (max-width:767px){
             .hero-section{height:auto;min-height:80vh;padding-top:140px;background-attachment:scroll}
             .hero-section h1{font-size:2.8rem}
             .hero-section p{font-size:1.2rem}
             .hero-section .btn-primary{display:block;width:90%;max-width:360px;margin:2rem auto;padding:1.2rem;font-size:1.3rem}
         }
-        @media (min-width:768px){
-            .nav-menu{flex-direction:row;position:static;padding:0;background:transparent;}
-            .nav-item{margin:0 .5rem;position:relative;}
-            .logo-img{height:160px;}
-            .navbar .container{justify-content:space-between;}
-            .menu-toggle{display:none;}
-        }
     </style>
 </head>
 <body>
+
+    <!-- PERFECT NAVBAR — now identical to Red Light Therapy & Nursing pages -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
                 <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img" loading="lazy">
             </a>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-menu">
-                <div class="nav-item"><a href="index.html#home" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
                 <div class="nav-item has-dropdown">
                     <a href="index.html#about" class="nav-link">About</a>
                     <div class="dropdown">
@@ -115,7 +141,7 @@
                         <a href="nursing-services.html">Nursing Services</a>
                         <a href="red-light-therapy.html">Red Light Therapy</a>
                         <a href="foot-care.html">Foot Care</a>
-                        <a href="facility-support.html">Care in Facilities</a> <!-- ← ADDED THIS LINE -->
+                        <a href="facility-support.html">Care in Facilities</a>
                     </div>
                 </div>
                 <div class="nav-item"><a href="index.html#faq" class="nav-link">FAQ</a></div>
@@ -126,7 +152,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Hero with your foot-care-senior.jpg as background -->
+    <!-- EVERYTHING BELOW IS YOUR ORIGINAL FOOT CARE CONTENT — UNCHANGED -->
     <section class="hero-section">
         <div class="container mx-auto px-6">
             <h1>In-Home Foot Care<br>for Seniors</h1>
@@ -137,7 +163,6 @@
         </div>
     </section>
 
-    <!-- REMOVED the big inline image here (you’re using it as hero background now) -->
     <section class="content-section">
         <div class="container mx-auto px-4 max-w-5xl">
             <h2 class="text-3xl font-bold text-center mb-8">Healthy Feet = Better Mobility & Independence</h2>
@@ -203,31 +228,23 @@
         </div>
     </footer>
 
+    <!-- PERFECT SCRIPT — same as Red Light & Nursing pages -->
     <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        if (menuToggle && navMenu && menuOverlay) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            });
-            menuOverlay.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
-            });
-            document.querySelectorAll('.nav-item.has-dropdown .nav-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 767) {
-                        e.preventDefault();
-                        link.parentElement.classList.toggle('active');
-                    }
-                });
+        window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
+        const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
+        function openMenu(){
+            navMenu.classList.add('active'); menuOverlay.classList.add('active');
+            menuToggle.innerHTML='<i class="fas fa-times"></i>'; menuToggle.classList.add('close');
+        }
+        function closeMenu(){
+            navMenu.classList.remove('active'); menuOverlay.classList.remove('active');
+            menuToggle.innerHTML='<i class="fas fa-bars"></i>'; menuToggle.classList.remove('close');
+        }
+        if(menuToggle&&navMenu&&menuOverlay){
+            menuToggle.addEventListener('click',()=>navMenu.classList.contains('active')?closeMenu():openMenu());
+            menuOverlay.addEventListener('click',closeMenu);
+            document.querySelectorAll('.nav-item.has-dropdown > .nav-link').forEach(link=>{
+                link.addEventListener('click',e=>{if(window.innerWidth<=767){e.preventDefault();link.parentElement.classList.toggle('active')}});
             });
         }
     </script>
