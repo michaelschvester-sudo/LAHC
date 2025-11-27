@@ -19,47 +19,23 @@
     <style>
         body{font-family:'Montserrat',sans-serif;background-color:#ffffff;color:#3a3a2e;margin:0;padding:0;scroll-behavior:smooth}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:#3a3a2e}
-        .navbar{
-            transition:background-color .3s ease;padding:.5rem 0;background-color:#89b0ae;
-            border-bottom:1px solid #bee3db;height:100px;display:flex;align-items:center;
-            position:fixed;top:0;width:100%;z-index:1000
-        }
+        .navbar{transition:background-color .3s ease;padding:.5rem 0;background-color:#89b0ae;border-bottom:1px solid #bee3db;height:100px;display:flex;align-items:center;position:fixed;top:0;width:100%;z-index:1000}
         .navbar.scrolled{background-color:#89b0ae;box-shadow:0 2px 10px rgba(58,58,46,.1)}
-        .logo-img{
-            filter:grayscale(30%);border:none;transition:filter .3s ease,transform .3s ease;
-            height:120px;width:auto;object-fit:contain
-        }
+        .logo-img{filter:grayscale(30%);border:none;transition:filter .3s ease,transform .3s ease;height:120px;width:auto;object-fit:contain}
         .logo-img:hover{filter:grayscale(0%);transform:scale(1.1)}
-        .nav-link{
-            padding:.25rem .5rem;color:#faf9f9;font-size:1.25rem;position:relative;
-            text-decoration:none;transition:color .3s
-        }
+        .nav-link{padding:.25rem .5rem;color:#faf9f9;font-size:1.25rem;position:relative;text-decoration:none;transition:color .3s}
         .nav-link:hover{color:#bee3db}
         .nav-item.has-dropdown{position:relative}
-        .dropdown{
-            display:none;position:absolute;background-color:#faf9f9;padding:0;width:200px;
-            top:100%;left:0;margin-top:0;z-index:10;border-radius:4px;
-            box-shadow:0 2px 5px rgba(0,0,0,.1);opacity:0;transition:opacity .1s ease
-        }
-        .nav-item.has-dropdown:hover .dropdown,
-        .nav-item.has-dropdown.active .dropdown{display:block;opacity:1}
+        .dropdown{display:none;position:absolute;background-color:#faf9f9;padding:0;width:200px;top:100%;left:0;margin-top:0;z-index:10;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.1);opacity:0;transition:opacity .1s ease}
+        .nav-item.has-dropdown:hover .dropdown,.nav-item.has-dropdown.active .dropdown{display:block;opacity:1}
         .dropdown a{display:block;padding:.75rem 1rem;color:#3a3a2e;font-size:1rem;text-decoration:none}
         .dropdown a:hover{background-color:#bee3db;color:#3a3a2e}
-        .menu-toggle{
-            display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;
-            cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001
-        }
-        .nav-menu{display:flex;align-items:center}   /* ← THIS WAS MISSING! */
+        .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;color:#faf9f9;cursor:pointer;padding:.5rem;position:absolute;right:1rem;z-index:1001}
+        .nav-menu{display:flex;align-items:center}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
         .error{color:#3a3a2e;font-size:.875rem;margin-top:.25rem;display:none}
-
-        /* Page-specific styles */
         .services-section{background-color:#ffffff;padding:4rem 0;border-top:1px solid #bee3db;margin-top:100px}
-        .service-card{
-            background:#faf9f9;border-radius:15px;box-shadow:0 4px 12px rgba(58,58,46,.05);
-            border:1px solid #bee3db;transition:transform .3s ease,box-shadow .3s ease;
-            text-align:center;padding:2rem
-        }
+        .service-card{background:#faf9f9;border-radius:15px;box-shadow:0 4px 12px rgba(58,58,46,.05);border:1px solid #bee3db;transition:transform .3s ease,box-shadow .3s ease;text-align:center;padding:2rem}
         .service-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(58,58,46,.1)}
         .service-card h3{font-size:1.75rem;margin-bottom:1rem;color:#1a3c34}
         .service-card ul{list-style:none;padding:0;text-align:left;margin:0 auto;max-width:250px}
@@ -68,20 +44,12 @@
         .contact-section{padding:4rem 2rem;background:linear-gradient(90deg,#89b0ae,#bee3db);color:#ffffff;text-align:center}
         .contact-section h2{font-size:2.5rem;margin-bottom:1rem}
         .contact-section form{max-width:500px;margin:0 auto}
-        .contact-section input,.contact-section textarea{
-            width:100%;padding:.75rem;margin-bottom:1rem;border:none;border-radius:8px;
-            background-color:rgba(255,255,255,.9);color:#2d2d2d
-        }
-        .contact-section button{
-            padding:.75rem 2rem;background-color:#1a3c34;color:#fff;border:none;
-            border-radius:8px;cursor:pointer;transition:background-color .3s
-        }
+        .contact-section input,.contact-section textarea{width:100%;padding:.75rem;margin-bottom:1rem;border:none;border-radius:8px;background-color:rgba(255,255,255,.9);color:#2d2d2d}
+        .contact-section button{padding:.75rem 2rem;background-color:#1a3c34;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:background-color .3s}
         .contact-section button:hover{background-color:#2d5d53}
         footer{background-color:#1a3c34;color:#bee3db;padding:2rem 0;text-align:center}
         footer a{color:#bee3db;text-decoration:underline}
         footer a:hover{color:#ffffff}
-
-        /* MOBILE MENU – FULLY FIXED */
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative}
@@ -98,7 +66,7 @@
                 display:block;padding:1.1rem 0;font-size:1.5rem;color:#faf9f9;
                 border-bottom:1px solid rgba(255,255,255,.15);position:relative
             }
-           .nav-item.has-dropdown > .nav-link::after{
+            .nav-item.has-dropdown > .nav-link::after{
     content:"↓";                 /* ← actual arrow symbol */
     position:absolute;right:1rem;top:50%;transform:translateY(-50%);
     font-size:1.8rem;transition:transform .3s;
@@ -118,10 +86,7 @@
                 background:rgba(0,0,0,.3);border-radius:50%;width:50px;height:50px;
                 display:flex;align-items:center;justify-content:center
             }
-            .menu-overlay{
-                display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;
-                background:rgba(0,0,0,.6);z-index:998
-            }
+            .menu-overlay{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.6);z-index:998}
             .menu-overlay.active{display:block}
             .services-section{margin-top:100px;padding:2rem 1rem}
         }
@@ -130,13 +95,11 @@
             .nav-item{margin:0 .5rem;position:relative}
             .logo-img{height:160px}
             .navbar .container{justify-content:space-between}
-            .menu-toggle{display:none}
         }
     </style>
 </head>
 <body>
 
-    <!-- EXACT SAME NAVBAR AS YOUR WORKING INDEX.HTML -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
@@ -174,7 +137,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Your Companionship Content (unchanged) -->
+    <!-- Your Companionship Content – 100% unchanged -->
     <section class="services-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Companionship Services</h2>
@@ -213,7 +176,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Exact same contact section -->
     <section id="contact" class="contact-section py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8">Get in Touch</h2>
@@ -247,7 +210,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Exact same footer as Nursing Services / Personal Care -->
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -264,7 +227,7 @@
         </div>
     </footer>
 
-    <!-- IDENTICAL SCRIPT FROM INDEX.HTML -->
+    <!-- Exact same working script from Nursing Services -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
@@ -282,18 +245,35 @@
             document.querySelectorAll('.nav-item.has-dropdown > .nav-link').forEach(link=>{
                 link.addEventListener('click',e=>{if(window.innerWidth<=767){e.preventDefault();link.parentElement.classList.toggle('active')}});
             });
+            // This part allows index.html# links to work perfectly
             document.querySelectorAll('.nav-link').forEach(link=>{
                 link.addEventListener('click',e=>{
                     const href=link.getAttribute('href');
-                    if(href&&href.includes('#')){
-                        e.preventDefault();
-                        const target=document.getElementById(href.split('#')[1]);
-                        if(target){target.scrollIntoView({behavior:'smooth'});closeMenu();}
+                    if(href && href.includes('#')){
+                        if(href.startsWith('index.html#') || href === 'index.html#contact'){
+                            return; // Let browser handle full page load + anchor
+                        }
                     }
                 });
+            });
+        }
+        const form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                const name=document.getElementById('name').value.trim(),
+                      email=document.getElementById('email').value.trim(),
+                      message=document.getElementById('message').value.trim(),
+                      honeypot=document.getElementById('honeypot').value;
+                document.querySelectorAll('.error').forEach(err=>err.style.display='none');
+                let valid=true;
+                if(!name){document.getElementById('nameError').style.display='block';valid=false}
+                if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('emailError').style.display='block';valid=false}
+                if(!message){document.getElementById('messageError').style.display='block';valid=false}
+                if(honeypot)return;
+                if(valid)form.submit();
             });
         }
     </script>
 </body>
 </html>
-
