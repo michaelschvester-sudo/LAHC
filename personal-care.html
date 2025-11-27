@@ -100,13 +100,12 @@
 </head>
 <body>
 
-    <!-- EXACT SAME NAVBAR AS NURSING SERVICES -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
                 <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img">
             </a>
-            <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
+            <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-menu">
                 <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
                 <div class="nav-item has-dropdown">
@@ -138,7 +137,6 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Your Personal Care Content – UNCHANGED -->
     <section class="services-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Personal Care Services</h2>
@@ -177,7 +175,6 @@
         </div>
     </section>
 
-    <!-- EXACT SAME CONTACT SECTION AS NURSING SERVICES -->
     <section id="contact" class="contact-section py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8">Get in Touch</h2>
@@ -211,7 +208,6 @@
         </div>
     </section>
 
-    <!-- EXACT SAME FOOTER AS NURSING SERVICES -->
     <footer>
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -222,23 +218,23 @@
             </div>
             <div class="space-x-4 flex justify-center">
                 <a href="https://www.facebook.com/profile.php?id=61581748379787" class="hover:text-white" target="_blank" rel="noopener noreferrer">
-                    Facebook
+                    <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- EXACT SAME SCRIPT AS NURSING SERVICES (fully working navigation) -->
+    <!-- EXACT SCRIPT FROM NURSING SERVICES – icons + perfect navigation -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
         function openMenu(){
             navMenu.classList.add('active'); menuOverlay.classList.add('active');
-            menuToggle.innerHTML='Close'; menuToggle.classList.add('close');
+            menuToggle.innerHTML='<i class="fas fa-times"></i>'; menuToggle.classList.add('close');
         }
         function closeMenu(){
             navMenu.classList.remove('active'); menuOverlay.classList.remove('active');
-            menuToggle.innerHTML='Menu'; menuToggle.classList.remove('close');
+            menuToggle.innerHTML='<i class="fas fa-bars"></i>'; menuToggle.classList.remove('close');
         }
         if(menuToggle&&navMenu&&menuOverlay){
             menuToggle.addEventListener('click',()=>navMenu.classList.contains('active')?closeMenu():openMenu());
