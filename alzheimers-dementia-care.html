@@ -34,7 +34,6 @@
         .nav-menu{display:flex;align-items:center}
         .logo-wrapper{height:auto;overflow:visible;display:flex;align-items:center;justify-content:center;width:100%}
         .error{color:#3a3a2e;font-size:.875rem;margin-top:.25rem;display:none}
-
         .services-section{background-color:#ffffff;padding:4rem 0;border-top:1px solid #bee3db;margin-top:100px}
         .service-card{background:#faf9f9;border-radius:15px;box-shadow:0 4px 12px rgba(58,58,46,.05);border:1px solid #bee3db;transition:transform .3s ease,box-shadow .3s ease;text-align:center;padding:2rem}
         .service-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(58,58,46,.1)}
@@ -51,7 +50,6 @@
         footer{background-color:#1a3c34;color:#bee3db;padding:2rem 0;text-align:center}
         footer a{color:#bee3db;text-decoration:underline}
         footer a:hover{color:#ffffff}
-
         @media (max-width:767px){
             .menu-toggle{display:block;top:50px}
             .navbar .container{flex-direction:column;align-items:center;padding:1rem .5rem;height:auto;position:relative}
@@ -139,6 +137,7 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
+    <!-- Your Alzheimer's & Dementia Content – 100% unchanged -->
     <section class="services-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">Our Alzheimer's & Dementia Care Services</h2>
@@ -226,6 +225,7 @@
         </div>
     </footer>
 
+/* Exact same working script used on all other pages */
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
@@ -243,13 +243,14 @@
             document.querySelectorAll('.nav-item.has-dropdown > .nav-link').forEach(link=>{
                 link.addEventListener('click',e=>{if(window.innerWidth<=767){e.preventDefault();link.parentElement.classList.toggle('active')}});
             });
+            // This part correctly allows navigation to index.html#about, #faq, #contact, etc.
             document.querySelectorAll('.nav-link').forEach(link=>{
                 link.addEventListener('click',e=>{
                     const href=link.getAttribute('href');
-                    if(href&&href.includes('#')){
-                        e.preventDefault();
-                        const target=document.getElementById(href.split('#')[1]);
-                        if(target){target.scrollIntoView({behavior:'smooth'});closeMenu();}
+                    if(href && href.includes('#')){
+                        if(href.startsWith('index.html#') || href === 'index.html#contact'){
+                            return; // Let browser handle full page load + anchor
+                        }
                     }
                 });
             });
