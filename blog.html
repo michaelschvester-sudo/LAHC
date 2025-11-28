@@ -83,7 +83,7 @@
                 padding:0 0 0 1.5rem;display:none
             }
             .nav-item.has-dropdown.active .dropdown{display:block}
-            .dropdown a{padding:0.9rem 0;font-size:1.35rem;color:#bee3db}
+            .dropdown a{padding:.9rem 0;font-size:1.35rem;color:#bee3db}
             .dropdown a:hover{color:#ffffff;background:none}
             .menu-toggle.close{
                 position:fixed;top:20px;right:20px;z-index:1001;font-size:2rem;
@@ -104,12 +104,11 @@
     </style>
 </head>
 <body>
-
-    <!-- Updated Navbar – identical to every other page -->
+    <!-- Navbar (unchanged) -->
     <nav class="navbar">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center logo-wrapper">
-                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img" width="120" height="120" loading="lazy" onerror="this.src='https://via.placeholder.com/120x120?text=Logo'; console.error('Logo failed to load at images/logo.png');">
+                <img src="images/logo.png" alt="Live At Home Care Logo" class="logo-img" width="120" height="120" loading="lazy">
             </a>
             <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-menu">
@@ -143,40 +142,45 @@
     </nav>
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- Everything below is 100% your original code – not a single character changed -->
-    <!-- Schema Markup for Blog Page -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Live At Home Care Blog",
-      "description": "Explore senior care tips, Alzheimer’s advice, and IT support insights for seniors in North Vancouver and Greater Vancouver.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Live At Home Care",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://lahc.ca/images/logo.png"
-        }
-      }
-    }
-    </script>
-
-    <!-- Blog Hero -->
+    <!-- Hero -->
     <section class="blog-hero">
         <div class="container mx-auto px-4">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Blog</h1>
-            <p class="text-lg md:text-xl mb-6">Insights, tips, and stories on senior care, health, and living independently at home in North Vancouver.</p>
+            <p class="text-lg md:text-xl mb-6">Insights, tips, and stories on senior care, health, and living independently at home in British Columbia.</p>
             <a href="index.html#contact" class="bg-[#89b0ae] text-[#faf9f9] px-6 py-3 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Book a Free Consultation</a>
         </div>
     </section>
 
-    <!-- Blog Section + All Posts + Sidebar + Footer – completely untouched -->
     <section class="blog-section py-16">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Main Blog Posts -->
             <div class="md:col-span-2">
-                <!-- Blog Post 1 -->
+
+                <!-- 1. NEWEST: AI for Seniors 2025 -->
+                <article class="blog-post-card mb-8">
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "BlogPosting",
+                      "headline": "AI for Seniors in 2025: Outsmart Scammers and Enjoy Real Benefits",
+                      "image": "https://lahc.ca/Images/blog/ai-for-seniors.jpg",
+                      "author": {"@type": "Organization","name": "Live At Home Care"},
+                      "publisher": {"@type": "Organization","name": "Live At Home Care","logo": {"@type": "ImageObject","url": "https://lahc.ca/images/logo.png"}},
+                      "datePublished": "2025-11-27",
+                      "description": "Safe, simple AI tools British Columbia seniors are using every day — from automatic scam blocking to restoring 50-year-old photos in seconds."
+                    }
+                    </script>
+                    <img src="Images/blog/ai-for-seniors.jpg" alt="Senior using tablet safely with AI protection" class="blog-post-image" loading="lazy">
+                    <h2 class="text-2xl font-bold mb-2">AI for Seniors in 2025: Outsmart Scammers and Enjoy Real Benefits</h2>
+                    <time datetime="2025-11-27" class="text-sm mb-4 block">Posted on November 27, 2025</time>
+                    <p class="mb-4">Discover the safe, free, and low-cost AI tools British Columbia seniors are actually using in 2025 — from automatic scam-call blocking to one-tap photo restoration. <a href="it-tech-support.html" class="text-[#89b0ae] hover:text-[#bee3db]">Learn about our Tech Safety Check service</a>.</p>
+                    <div class="social-share">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/ai-for-seniors.html" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/ai-for-seniors.html&text=AI%20for%20Seniors%202025%3A%20Outsmart%20Scammers%20%26%20Enjoy%20Real%20Benefits" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <a href="ai-for-seniors.html" class="inline-block mt-4 bg-[#89b0ae] text-[#faf9f9] px-4 py-2 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Read More</a>
+                </article>
+
+                <!-- 2. Tips for Managing Alzheimer's -->
                 <article class="blog-post-card mb-8">
                     <script type="application/ld+json">
                     {
@@ -184,33 +188,24 @@
                       "@type": "BlogPosting",
                       "headline": "Tips for Managing Alzheimer's at Home in North Vancouver",
                       "image": "https://lahc.ca/images/alzheimers-care-vancouver.jpg",
-                      "author": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care"
-                      },
-                      "publisher": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care",
-                        "logo": {
-                          "@type": "ImageObject",
-                          "url": "https://lahc.ca/images/logo.png"
-                        }
-                      },
+                      "author": {"@type": "Organization","name": "Live At Home Care"},
+                      "publisher": {"@type": "Organization","name": "Live At Home Care","logo": {"@type": "ImageObject","url": "https://lahc.ca/images/logo.png"}},
                       "datePublished": "2025-10-01",
                       "description": "Practical strategies for creating a safe and supportive environment for loved ones with Alzheimer's in North Vancouver."
                     }
                     </script>
-                    <img src="images/alzheimers-care-vancouver.jpg" alt="Senior with caregiver managing Alzheimer's in North Vancouver home" class="blog-post-image" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'; console.error('Image failed to load at images/alzheimers-care-vancouver.jpg');">
+                    <img src="images/alzheimers-care-vancouver.jpg" alt="Senior with caregiver managing Alzheimer's in North Vancouver home" class="blog-post-image" loading="lazy">
                     <h2 class="text-2xl font-bold mb-2">Tips for Managing Alzheimer's at Home in North Vancouver</h2>
                     <time datetime="2025-10-01" class="text-sm mb-4 block">Posted on October 1, 2025</time>
                     <p class="mb-4">Discover practical strategies to create a safe and supportive environment for loved ones with Alzheimer's or dementia. <a href="alzheimers-dementia-care.html" class="text-[#89b0ae] hover:text-[#bee3db]">Learn about our Alzheimer’s care services</a>.</p>
                     <div class="social-share">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/tips-managing-alzheimers-home" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/tips-managing-alzheimers-home&text=Tips%20for%20Managing%20Alzheimer's%20at%20Home" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/tips-managing-alzheimers-home" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/tips-managing-alzheimers-home&text=Tips%20for%20Managing%20Alzheimer's%20at%20Home" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                     </div>
                     <a href="tips-managing-alzheimers-home.html" class="inline-block mt-4 bg-[#89b0ae] text-[#faf9f9] px-4 py-2 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Read More</a>
                 </article>
-                <!-- Blog Post 2 -->
+
+                <!-- 3. IT Support for Seniors -->
                 <article class="blog-post-card mb-8">
                     <script type="application/ld+json">
                     {
@@ -218,33 +213,24 @@
                       "@type": "BlogPosting",
                       "headline": "The Benefits of IT Support for Seniors in Vancouver",
                       "image": "https://lahc.ca/images/it-support-seniors-vancouver.jpg",
-                      "author": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care"
-                      },
-                      "publisher": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care",
-                        "logo": {
-                          "@type": "ImageObject",
-                          "url": "https://lahce.ca/images/logo.png"
-                        }
-                      },
+                      "author": {"@type": "Organization","name": "Live At Home Care"},
+                      "publisher": {"@type": "Organization","name": "Live At Home Care","logo": {"@type": "ImageObject","url": "https://lahc.ca/images/logo.png"}},
                       "datePublished": "2025-09-15",
                       "description": "How IT assistance helps seniors in Vancouver stay connected with family and manage daily tasks."
                     }
                     </script>
-                    <img src="images/it-support-seniors-vancouver.jpg" alt="Senior using laptop with IT support in Vancouver" class="blog-post-image" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'; console.error('Image failed to load at images/it-support-seniors-vancouver.jpg');">
+                    <img src="images/it-support-seniors-vancouver.jpg" alt="Senior using laptop with IT support in Vancouver" class="blog-post-image" loading="lazy">
                     <h2 class="text-2xl font-bold mb-2">The Benefits of IT Support for Seniors in Vancouver</h2>
                     <time datetime="2025-09-15" class="text-sm mb-4 block">Posted on September 15, 2025</time>
                     <p class="mb-4">How tech assistance can help seniors stay connected with family and manage daily tasks more easily. <a href="it-tech-support.html" class="text-[#89b0ae] hover:text-[#bee3db]">Explore our IT support services</a>.</p>
                     <div class="social-share">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/it-support-seniors" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/it-support-seniors&text=The%20Benefits%20of%20IT%20Support%20for%20Seniors" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/it-support-seniors" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/it-support-seniors&text=The%20Benefits%20of%20IT%20Support%20for%20Seniors" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                     </div>
                     <a href="it-support-seniors.html" class="inline-block mt-4 bg-[#89b0ae] text-[#faf9f9] px-4 py-2 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Read More</a>
                 </article>
-                <!-- Blog Post 3 -->
+
+                <!-- 4. Fall Prevention -->
                 <article class="blog-post-card">
                     <script type="application/ld+json">
                     {
@@ -252,32 +238,23 @@
                       "@type": "BlogPosting",
                       "headline": "Fall Prevention Tips for the Elderly in Greater Vancouver",
                       "image": "https://lahc.ca/images/fall-prevention-elderly-vancouver.jpg",
-                      "author": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care"
-                      },
-                      "publisher": {
-                        "@type": "Organization",
-                        "name": "Live At Home Care",
-                        "logo": {
-                          "@type": "ImageObject",
-                          "url": "https://lahc.ca/images/logo.png"
-                        }
-                      },
+                      "author": {"@type": "Organization","name": "Live At Home Care"},
+                      "publisher": {"@type": "Organization","name": "Live At Home Care","logo": {"@type": "ImageObject","url": "https://lahc.ca/images/logo.png"}},
                       "datePublished": "2025-08-20",
                       "description": "Simple steps to reduce fall risks and promote safe mobility for seniors at home in Greater Vancouver."
                     }
                     </script>
-                    <img src="images/fall-prevention-elderly-vancouver.jpg" alt="Senior practicing fall prevention in Greater Vancouver home" class="blog-post-image" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'; console.error('Image failed to load at images/fall-prevention-elderly-vancouver.jpg');">
+                    <img src="images/fall-prevention-elderly-vancouver.jpg" alt="Senior practicing fall prevention in Greater Vancouver home" class="blog-post-image" loading="lazy">
                     <h2 class="text-2xl font-bold mb-2">Fall Prevention Tips for the Elderly in Greater Vancouver</h2>
                     <time datetime="2025-08-20" class="text-sm mb-4 block">Posted on August 20, 2025</time>
                     <p class="mb-4">Simple steps to reduce fall risks and promote safe mobility at home. <a href="personal-care.html" class="text-[#89b0ae] hover:text-[#bee3db]">See our personal care services</a>.</p>
                     <div class="social-share">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/fall-prevention-elderly" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/fall-prevention-elderly&text=Fall%20Prevention%20Tips%20for%20the%20Elderly" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lahc.ca/fall-prevention-elderly" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?url=https://lahc.ca/fall-prevention-elderly&text=Fall%20Prevention%20Tips%20for%20the%20Elderly" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                     </div>
                     <a href="fall-prevention-elderly.html" class="inline-block mt-4 bg-[#89b0ae] text-[#faf9f9] px-4 py-2 rounded-lg hover:bg-[#bee3db] hover:text-[#3a3a2e] transition duration-300">Read More</a>
                 </article>
+
                 <!-- Pagination -->
                 <div class="pagination">
                     <a href="#" class="disabled">Previous</a>
@@ -286,7 +263,8 @@
                     <a href="blog/page/2">Next</a>
                 </div>
             </div>
-            <!-- Sidebar -->
+
+            <!-- Sidebar – now includes the new post at the top -->
             <aside class="sidebar md:col-span-1">
                 <h2 class="text-xl font-bold mb-4">Search Posts</h2>
                 <div class="search-bar">
@@ -302,6 +280,7 @@
                 </ul>
                 <h2 class="text-xl font-bold mb-4">Recent Posts</h2>
                 <ul>
+                    <li><a href="ai-for-seniors.html" class="text-[#89b0ae] hover:text-[#bee3db]">AI for Seniors in 2025: Outsmart Scammers and Enjoy Real Benefits</a></li>
                     <li><a href="tips-managing-alzheimers-home.html" class="text-[#89b0ae] hover:text-[#bee3db]">Tips for Managing Alzheimer's at Home</a></li>
                     <li><a href="it-support-seniors.html" class="text-[#89b0ae] hover:text-[#bee3db]">The Benefits of IT Support for Seniors</a></li>
                     <li><a href="fall-prevention-elderly.html" class="text-[#89b0ae] hover:text-[#bee3db]">Fall Prevention Tips for the Elderly</a></li>
@@ -310,7 +289,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer & Script (unchanged) -->
     <footer class="py-6 text-center">
         <div class="container mx-auto px-4">
             <p class="mb-2">© 2025 Live At Home Care. All rights reserved.</p>
@@ -325,12 +304,10 @@
         </div>
     </footer>
 
-    <!-- Same working script as every other page -->
     <script>
         window.addEventListener('scroll',()=>{document.querySelector('.navbar').classList.toggle('scrolled',window.scrollY>50)});
         const menuToggle=document.querySelector('.menu-toggle'),navMenu=document.querySelector('.nav-menu'),menuOverlay=document.getElementById('menuOverlay');
-        function openMenu(){
-            navMenu.classList.add('active'); menuOverlay.classList.add('active');
+        function openMenu(){navMenu.classList.add('active'); menuOverlay.classList.add('active');
             menuToggle.innerHTML='<i class="fas fa-times"></i>'; menuToggle.classList.add('close');
         }
         function closeMenu(){
@@ -342,16 +319,6 @@
             menuOverlay.addEventListener('click',closeMenu);
             document.querySelectorAll('.nav-item.has-dropdown > .nav-link').forEach(link=>{
                 link.addEventListener('click',e=>{if(window.innerWidth<=767){e.preventDefault();link.parentElement.classList.toggle('active')}});
-            });
-            document.querySelectorAll('.nav-link').forEach(link=>{
-                link.addEventListener('click',e=>{
-                    const href=link.getAttribute('href');
-                    if(href && href.includes('#')){
-                        if(href.startsWith('index.html#') || href === 'index.html#contact'){
-                            return;
-                        }
-                    }
-                });
             });
         }
         function searchPosts() {
